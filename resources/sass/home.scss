@@ -1,0 +1,99 @@
+.home {
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	height: 100vh;
+	padding-top: 65px;
+	background: #7257e0;
+	background: -moz-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #7257e0), color-stop(65%, #84bad2), color-stop(100%, #84bad2));
+	background: -webkit-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
+	background: -o-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
+	background: -ms-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
+	background: linear-gradient(to right, #7257e0 0%, #84bad2 65%, #84bad2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7257e0', endColorstr='#84bad2', GradientType=1);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	.container {
+		width: 90%;
+		max-width: 1400px;
+		display: flex;
+		justify-content: space-around;
+
+		.home-text {
+			color: #fefefe;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+
+			.accession {
+				display: flex;
+				align-items: center;
+
+				.line {
+					display: block;
+					width: 30px;
+					height: 2px;
+					background-color: #fefefe;
+				}
+
+				.title {
+					margin-left: 6px;
+					font-size: 16px;
+				}
+			}
+
+			.buttons {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				margin: 20px 0 40px 0;
+
+				.button {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+					width: 230px;
+					height: 50px;
+					border-radius: 8px;
+					background-color: #6d24e3;
+					-webkit-box-shadow: 2px 6px 8px -2px rgba(0,0,0,0.75);
+					-moz-box-shadow: 2px 6px 8px -2px rgba(0,0,0,0.75);
+					box-shadow: 2px 6px 8px -2px rgba(0,0,0,0.75);
+				}
+
+				.button:last-child {
+					margin-left: 20px;
+				}
+			}
+
+			.intro-text {
+				font-size: 50px;
+				line-height: normal;
+			}
+
+			.intro-text, .accession .title {
+				text-shadow: -1px 4px 8px #000;
+			}
+		}
+
+		.social-networks {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			.icon {
+				cursor: pointer;
+			}
+		}
+
+		.home-picture {
+
+		}
+	}
+}

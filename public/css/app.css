@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Maven+Pro);.navbar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 10px 50px 0 50px;
+  margin-bottom: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.navbar .navbar-menu {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar .navbar-menu .navbar-item {
+  font-size: 25px;
+  box-sizing: border-box;
+  margin-left: 12px;
+  padding: 5px;
+  text-shadow: -1px 2px 4px #000;
+}
+
+.navbar .navbar-menu .navbar-item a {
+  color: #fefefe;
+}
+
+.navbar .navbar-menu .navbar-item:hover {
+  border-bottom: 3px solid #eee;
+}
+
+.navbar .navbar-menu .navbar-item:last-child {
+  border-radius: 5px;
+  border: 1.5px solid #fefefe;
+}
+
+.navbar .navbar-item-logo {
+  height: 50px;
+}
+
+.home {
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  padding-top: 65px;
+  background: #7257e0;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #7257e0), color-stop(65%, #84bad2), color-stop(100%, #84bad2));
+  background: linear-gradient(to right, #7257e0 0%, #84bad2 65%, #84bad2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7257e0", endColorstr="#84bad2", GradientType=1);
+  box-sizing: border-box;
+}
+
+.home .container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home .container .home-text {
+  color: #fefefe;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home .container .home-text .accession {
+  display: flex;
+  align-items: center;
+}
+
+.home .container .home-text .accession .line {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #fefefe;
+}
+
+.home .container .home-text .accession .title {
+  margin-left: 6px;
+  font-size: 16px;
+}
+
+.home .container .home-text .buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0 40px 0;
+}
+
+.home .container .home-text .buttons .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 230px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #6d24e3;
+  box-shadow: 2px 6px 8px -2px rgba(0, 0, 0, 0.75);
+}
+
+.home .container .home-text .buttons .button:last-child {
+  margin-left: 20px;
+}
+
+.home .container .home-text .intro-text {
+  font-size: 50px;
+  line-height: normal;
+}
+
+.home .container .home-text .intro-text,
+.home .container .home-text .accession .title {
+  text-shadow: -1px 4px 8px #000;
+}
+
+.home .container .social-networks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .container .social-networks .icon {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4em;
+  font-size: 22px;
+  font-family: "Maven Pro", "Nunito", sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+

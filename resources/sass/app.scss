@@ -1,0 +1,29 @@
+// files
+@import "header";
+@import "home";
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
+// Variables
+@import 'variables';
+
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.4em;
+	font-size: 22px;
+	font-family: 'Maven Pro', 'Nunito', sans-serif;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	margin: 0;
+}
