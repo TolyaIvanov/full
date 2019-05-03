@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Resources\GalleryResource;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Gallery;
+use App\Http\Resources\PhotosResource;
+use App\Photos;
+use Illuminate\Http\Request;
 
-class   GalleryController extends Controller
+class PhotosController extends Controller
 {
     public function index(Request $request)
     {
         $part = $request->load_param;
         $chunk = $request->chunk;
-        $images = new GalleryResource(
-            Gallery::orderBy('id', 'desc')
+        $images = new PhotosResource(
+            Photos::orderBy('id', 'desc')
                 ->skip($part * $chunk)
                 ->take($chunk)
                 ->get()
