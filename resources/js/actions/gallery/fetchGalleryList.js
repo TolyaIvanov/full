@@ -1,19 +1,20 @@
 import {fetchGalleryListHasErrored, galleryIsLoading, fetchGalleryListSuccess} from './actionCreators'
 
-export function errorFetch() {
+export const errorFetch = () => {
 	return (dispatch) => {
 		setTimeout(() => (
 			dispatch(fetchGalleryListHasErrored(true))
 		), 5000)
 	}
-}
+};
 
-export function fetchGalleryList(url) {
+export const fetchGalleryList = (url) => {
 	return (dispatch) => {
 		dispatch(galleryIsLoading(true));
 
 		fetch(url)
 			.then((response) => {
+
 				if (!response.ok) {
 					throw Error(response.statusText);
 				}
@@ -26,4 +27,4 @@ export function fetchGalleryList(url) {
 			.then(data => dispatch(fetchGalleryListSuccess(data)))
 			.catch(() => dispatch(fetchGalleryListHasErrored(true)))
 	}
-}
+};

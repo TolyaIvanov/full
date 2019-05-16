@@ -6,7 +6,7 @@
 
 
 //Route::prefix('v1')->group(function(){
-    Route::get('/gallery', 'api\PhotosController@index');
+    Route::get('gallery', 'api\PhotosController@index');
 
     Route::post('login', 'api\AuthController@login');
     Route::get('register', 'api\AuthController@register');
