@@ -6,26 +6,18 @@ import {
 } from './../../constants/constants'
 
 
-export function scrollToHome() {
-	return {
-		type: PAGE_HOME_ACTIVE
-	}
-}
+export const scrollHome = () => ({
+	type: PAGE_HOME_ACTIVE
+});
 
-export function scrollToExamples() {
-	return {
-		type: PAGE_EXAMPLES_ACTIVE
-	}
-}
+export const scrollExamples = () => ({
+	type: PAGE_EXAMPLES_ACTIVE
+});
 
-export function scrollToAboutUs() {
-	return {
-		type: PAGE_ABOUT_US_ACTIVE
-	}
-}
+export const scrollAboutUs = () => ({
+	type: PAGE_ABOUT_US_ACTIVE
+});
 
-export function scrollToPurpose() {
-	return {
-		type: PAGE_PURPOSE_ACTIVE
-	}
-}
+export const scrollPurpose = () => ({
+	type: PAGE_PURPOSE_ACTIVE
+});

@@ -9,7 +9,6 @@ import Error from './Error'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
-import Shop from './components/shop/Shop'
 import Gallery from './components/gallery/Gallery'
 import Try from './components/try/Try'
 
@@ -26,7 +25,6 @@ class Index extends Component {
 					<Header/>
 					<Switch>
 						<Route exact path={'/'} component={Home}/>
-						<Route path={'/shop'} component={Shop}/>
 						<Route path={'/gallery'} component={Gallery}/>
 						<Route path={'/try'} component={Try}/>
 						<Route component={Error}/>

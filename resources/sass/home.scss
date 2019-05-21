@@ -6,14 +6,7 @@
 	position: relative;
 	height: 100vh;
 	padding-top: 65px;
-	background: #7257e0;
-	background: -moz-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, #7257e0), color-stop(65%, #84bad2), color-stop(100%, #84bad2));
-	background: -webkit-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
-	background: -o-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
-	background: -ms-linear-gradient(left, #7257e0 0%, #84bad2 65%, #84bad2 100%);
-	background: linear-gradient(to right, #7257e0 0%, #84bad2 65%, #84bad2 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7257e0', endColorstr='#84bad2', GradientType=1);
+	background: #f6f2f2;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -23,29 +16,14 @@
 		max-width: 1400px;
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
 
 		.home-text {
-			color: #fefefe;
+			color: #000;
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
-
-			.accession {
-				display: flex;
-				align-items: center;
-
-				.line {
-					display: block;
-					width: 30px;
-					height: 2px;
-					background-color: #fefefe;
-				}
-
-				.title {
-					margin-left: 6px;
-					font-size: 16px;
-				}
-			}
+			width: 500px;
 
 			.buttons {
 				display: flex;
@@ -61,39 +39,45 @@
 					width: 230px;
 					height: 50px;
 					border-radius: 8px;
-					background-color: #6d24e3;
-					-webkit-box-shadow: 2px 6px 8px -2px rgba(0,0,0,0.75);
-					-moz-box-shadow: 2px 6px 8px -2px rgba(0,0,0,0.75);
-					box-shadow: 2px 6px 8px -2px rgba(0,0,0,0.75);
+					color: #fff;
+					background-color: #5753ff;
+					-webkit-box-shadow: 2px 6px 8px -2px rgba(0, 0, 0, 0.75);
+					-moz-box-shadow: 2px 6px 8px -2px rgba(0, 0, 0, 0.75);
+					box-shadow: 2px 6px 8px -2px rgba(0, 0, 0, 0.75);
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
 				}
 
 				.button:last-child {
 					margin-left: 20px;
+				}
+
+				.button:active {
+					margin-bottom: -1px;
 				}
 			}
 
 			.intro-text {
 				font-size: 50px;
 				line-height: normal;
+				font-weight: bold;
+				margin-bottom: 25px;
 			}
 
-			.intro-text, .accession .title {
-				text-shadow: -1px 4px 8px #000;
-			}
-		}
-
-		.social-networks {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			
-			.icon {
-				cursor: pointer;
+			.about-text {
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 300;
+				color: #aaa;
+				font-size: 12px;
+				line-height: 1.8em;
+				margin-bottom: 10px;
 			}
 		}
 
 		.home-picture {
-
+			max-width: 512px;
 		}
 	}
 }

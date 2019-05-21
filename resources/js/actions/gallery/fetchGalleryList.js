@@ -14,7 +14,6 @@ export const fetchGalleryList = (url) => {
 
 		fetch(url)
 			.then((response) => {
-
 				if (!response.ok) {
 					throw Error(response.statusText);
 				}

@@ -1,6 +1,6 @@
 import {LOAD_GALLERY_PHOTO, GALLERY_IS_LOADING, GALLERY_LOAD_HAS_ERROR} from '../../constants/constants'
 
-export function fetchGalleryList(state = [], {data, type}) {
+export const fetchGalleryList = (state = [], {data, type}) => {
 	switch (type) {
 		case LOAD_GALLERY_PHOTO:
 			return {
@@ -10,9 +10,9 @@ export function fetchGalleryList(state = [], {data, type}) {
 		default:
 			return state;
 	}
-}
+};
 
-export function galleryIsLoading(state = false, {isLoading, type}) {
+export const galleryIsLoading = (state = false, {isLoading, type}) => {
 	switch (type) {
 		case GALLERY_IS_LOADING :
 			return {
@@ -22,9 +22,9 @@ export function galleryIsLoading(state = false, {isLoading, type}) {
 		default:
 			return state;
 	}
-}
+};
 
-export function fetchGalleryListHasErrored(state = false, {hasErrored, type}) {
+export const fetchGalleryListHasErrored = (state = false, {hasErrored, type}) => {
 	switch (type) {
 		case GALLERY_LOAD_HAS_ERROR :
 			return {
@@ -35,4 +35,4 @@ export function fetchGalleryListHasErrored(state = false, {hasErrored, type}) {
 			return state;
 
 	}
-}
+};

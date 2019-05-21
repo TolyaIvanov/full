@@ -1,4 +1,4 @@
-import { scrollToAboutUs, scrollToExamples, scrollToHome, scrollToPurpose } from '../actionCreators'
+import { scrollHome, scrollExamples, scrollAboutUs, scrollPurpose } from '../actionCreators'
 
 export function scroll() {
 
