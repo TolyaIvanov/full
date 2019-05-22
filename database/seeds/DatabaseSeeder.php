@@ -12,10 +12,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-	    DB::table('galleries')->insert([
+	    DB::table('photos')->insert([
 		    'name' => str_random(10),
 		    'description' => str_random(10),
-		    'style' => 'deep dream',
+		    'style' => 'style_transfer',
+            'uri' => str_random(5),
+            'height' => rand(100, 300),
+            'width' => rand(100, 300),
 	    ]);
     }
 }

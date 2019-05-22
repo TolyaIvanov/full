@@ -158,6 +158,42 @@
   text-align: center;
 }
 
+.examples .styles {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.examples .styles .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.examples .styles .column .column-title {
+  font-family: "Maven Pro", sans-serif;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.examples .styles .column .style-image-wrapper {
+  width: 300px;
+  height: 200px;
+  margin-top: 25px;
+  background-color: #737373;
+  transition: all 0.2s;
+}
+
+.examples .styles .column .style-image-wrapper:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.examples .styles .column:not(:last-child) {
+  margin-right: 50px;
+}
+
 body {
   margin: 0;
   padding: 0;

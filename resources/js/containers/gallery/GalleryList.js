@@ -39,7 +39,7 @@ const mapStateToProps = (state) => ({
 	galleryData: state.fetchGalleryList,
 });
 
-const mapDispatchToProps = (dispatch) =>({
+const mapDispatchToProps = (dispatch) => ({
 	fetchData: (url) => dispatch(fetchGalleryList(url))
 });
 

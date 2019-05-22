@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ExamplesPhotoCols from './../../../containers/examples/ExamplePhotoCols'
+
 const Examples = props => (
 	<section className={'examples'}>
 		<div className="examples-text">
@@ -8,7 +10,7 @@ const Examples = props => (
 				like Make Art, Style Transfer and Deep Dream. Let’s see some examples.</p>
 		</div>
 		<div className="styles">
-			{props}
+			<ExamplesPhotoCols/>
 		</div>
 	</section>
 );

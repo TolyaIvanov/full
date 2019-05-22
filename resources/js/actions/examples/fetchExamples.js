@@ -11,6 +11,9 @@ export const fetchExamplesList = url => {
 				return response;
 			})
 			.then(response => response.json())
-			.then(data => dispatch(fetchExample(data)));
+			.then(data => dispatch(fetchExample(data)))
+			.catch(rejected => {
+				console.log(rejected);
+			});
 	}
 };
