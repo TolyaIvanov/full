@@ -6,6 +6,7 @@ import {fetchExamplesList} from "../../actions/examples/fetchExamples";
 import {
 	BASE_PATH,
 } from "../../constants/constants";
+
 import ExampleColumn from "../../components/home/parts/ExampleColumn";
 
 class ExamplePhotoCols extends React.Component {

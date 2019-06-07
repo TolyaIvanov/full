@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {BASE_PATH, LOAD_PARAM, GALLERY_CHUNK} from './../../constants/constants'
 
 import {fetchGalleryList} from '../../actions/gallery/fetchGalleryList'
-import Picture from "../../components/gallery/picture/Picture";
+import Picture from "../../components/gallery/picture/Picture"
 
 class GalleryList extends React.Component {
 	state = {
