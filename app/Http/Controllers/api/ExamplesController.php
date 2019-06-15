@@ -12,19 +12,19 @@ class ExamplesController extends Controller
     public function index()
     {
         $columns = Photos::orderBy('id', 'desc')
-            ->where('style', 'deep_dream')
+            ->where('style', 'Deep dream')
             ->take(2)
             ->get();
 
         $columns = $columns->merge(Photos::orderBy('id', 'desc')
-            ->where('style', 'style_transfer')
+            ->where('style', 'Style transfer')
             ->take(2)
             ->get()
         );
 
         $columns = new ExamplesResource(
             $columns->merge(Photos::orderBy('id', 'desc')
-                ->where('style', 'default')
+                ->where('style', 'Make art')
                 ->take(2)
                 ->get()
             )

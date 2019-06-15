@@ -2,7 +2,7 @@ import {
 	GALLERY_IS_LOADING,
 	GALLERY_LOAD_HAS_ERROR,
 	LOAD_GALLERY_PHOTO
-} from "../../constants/constants";
+} from "../../constants/defaultConstants";
 
 export const fetchGalleryListSuccess = data => ({
 	type: LOAD_GALLERY_PHOTO,

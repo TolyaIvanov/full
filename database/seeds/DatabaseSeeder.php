@@ -13,9 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 	    DB::table('photos')->insert([
-		    'name' => str_random(10),
 		    'description' => str_random(10),
-		    'style' => 'style_transfer',
+		    'style' => 'Style transfer',
             'uri' => str_random(5),
             'height' => rand(100, 300),
             'width' => rand(100, 300),

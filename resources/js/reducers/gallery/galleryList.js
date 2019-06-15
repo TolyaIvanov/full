@@ -1,4 +1,4 @@
-import {LOAD_GALLERY_PHOTO, GALLERY_IS_LOADING, GALLERY_LOAD_HAS_ERROR} from '../../constants/constants'
+import {LOAD_GALLERY_PHOTO, GALLERY_IS_LOADING, GALLERY_LOAD_HAS_ERROR} from '../../constants/defaultConstants'
 
 export const fetchGalleryList = (state = [], {data, type}) => {
 	switch (type) {

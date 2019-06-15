@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
-import {BASE_PATH, LOAD_PARAM, GALLERY_CHUNK} from './../../constants/constants'
+import {BASE_PATH, LOAD_PARAM, GALLERY_CHUNK} from '../../constants/defaultConstants'
 
 import {fetchGalleryList} from '../../actions/gallery/fetchGalleryList'
 import Picture from "../../components/gallery/picture/Picture"

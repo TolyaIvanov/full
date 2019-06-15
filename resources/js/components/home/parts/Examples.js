@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ExamplesPhotoCols from './../../../containers/examples/ExamplePhotoCols'
+import ExamplesPhotoCols from '../../../containers/examples/ExampleColumnContainer'
 
 const Examples = props => (
 	<section className={'examples'}>

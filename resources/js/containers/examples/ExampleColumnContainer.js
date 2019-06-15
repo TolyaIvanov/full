@@ -5,11 +5,11 @@ import {fetchExamplesList} from "../../actions/examples/fetchExamples";
 
 import {
 	BASE_PATH,
-} from "../../constants/constants";
+} from "../../constants/defaultConstants";
 
 import ExampleColumn from "../../components/home/parts/ExampleColumn";
 
-class ExamplePhotoCols extends React.Component {
+class ExampleColumnContainer extends React.Component {
 	componentDidMount() {
 		this.props.fetchData(`${BASE_PATH}examples`)
 	}
@@ -23,11 +23,21 @@ class ExamplePhotoCols extends React.Component {
 	}
 
 	renderStyleCols = data => {
-		return data && data.map(col => (
+		let columns;
+
+		columns = data[0] ? [].concat(
+			data[0].filter(col => col.style === 'Make art'),
+			data[0].filter(col => col.style === 'Style transfer'),
+			data[0].filter(col => col.style === 'Deep dream')
+		) : [];
+
+		return columns.map(col => (
 			<ExampleColumn
+				key={col.id}
 				title={col.title}
-				firstUri={col.firstUri}
-				secondUri={col.secondUri}
+				firstUri={col.uri}
+				description={col.description}
+				style={col.style}
 			/>
 		))
 	}
@@ -41,4 +51,4 @@ const mapDispatchToProps = (dispatch) => ({
 	fetchData: (url) => dispatch(fetchExamplesList(url))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExamplePhotoCols);
+export default connect(mapStateToProps, mapDispatchToProps)(ExampleColumnContainer);
