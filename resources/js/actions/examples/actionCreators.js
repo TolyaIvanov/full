@@ -4,6 +4,6 @@ import {
 
 export const fetchExample = data => ({
 	type: LOAD_EXAMPLES_PHOTOS,
-	data: data,
+	data,
 });
 

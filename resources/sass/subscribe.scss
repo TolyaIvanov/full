@@ -1,0 +1,56 @@
+.subscribe {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #2c2c2c;
+	padding: 100px 0;
+	width: 100%;
+
+	.subscribe-title, .subscribe-text, .subscribe-submit {
+		color: #fff;
+	}
+
+	.subscribe-title, .subscribe-submit {
+		text-transform: uppercase;
+	}
+
+	.subscribe-title, .subscribe-text {
+		margin: 0 0 35px 0;
+	}
+
+	.subscribe-title {
+		font-size: 35px;
+	}
+
+	.subscribe-text {
+		font-size: 18px;
+	}
+
+	.send-wrapper {
+		display: flex;
+
+		.subscribe-email, .subscribe-submit {
+			border-radius: 6px;
+			height: 50px;
+			font-size: 20px;
+		}
+
+		.subscribe-email {
+			width: 400px;
+			border: none;
+			outline: none;
+			margin-right: 10px;
+			padding: 0 10px;
+		}
+
+		.subscribe-submit {
+			background-color: #fc5447;
+			font-size: 18px;
+			width: 120px;
+			border: none;
+			cursor: pointer;
+			text-align: center;
+		}
+	}
+}

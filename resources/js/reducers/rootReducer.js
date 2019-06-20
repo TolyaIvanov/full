@@ -10,14 +10,16 @@ import {
 	fetchExamples
 } from "./examples/examples";
 
+import {
+	emailChanging,
+	isEmailFetchSuccess
+} from "./subscribe/email";
+
 export default combineReducers({
 	fetchGalleryList,
 	galleryIsLoading,
 	fetchGalleryListHasErrored,
 	fetchExamples,
+	emailChanging,
+	isEmailFetchSuccess,  //todo email notification
 });
-
-
-
-
-

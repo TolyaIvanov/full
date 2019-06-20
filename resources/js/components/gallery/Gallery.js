@@ -1,5 +1,5 @@
 import React from 'react'
-import GalleryList from './../../containers/gallery/GalleryList'
+import GalleryList from '../../containers/gallery/GalleryListContainer'
 
 class Gallery extends React.Component {
 	render() {

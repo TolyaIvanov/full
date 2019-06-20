@@ -5,7 +5,7 @@ import {BASE_PATH, LOAD_PARAM, GALLERY_CHUNK} from '../../constants/defaultConst
 import {fetchGalleryList} from '../../actions/gallery/fetchGalleryList'
 import Picture from "../../components/gallery/picture/Picture"
 
-class GalleryList extends React.Component {
+class GalleryListContainer extends React.Component {
 	state = {
 		hitsPerPage: 0
 	};
@@ -43,4 +43,4 @@ const mapDispatchToProps = (dispatch) => ({
 	fetchData: (url) => dispatch(fetchGalleryList(url))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GalleryList);
+export default connect(mapStateToProps, mapDispatchToProps)(GalleryListContainer);
