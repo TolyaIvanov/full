@@ -11,7 +11,7 @@ import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
 import Gallery from './components/gallery/Gallery'
 import Try from './components/try/Try'
-
+import NotificationContainer from './containers/notifications/NotificationContainer'
 
 class Index extends Component {
 	constructor(props) {
@@ -30,6 +30,7 @@ class Index extends Component {
 						<Route component={Error}/>
 					</Switch>
 					<Footer/>
+					<NotificationContainer/>
 				</Router>
 			</Provider>
 		);

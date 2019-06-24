@@ -18,6 +18,9 @@ export const GALLERY_LOAD_HAS_ERROR = 'GALLERY_LOAD_HAS_ERROR';
 export const LOAD_EXAMPLES_PHOTOS = 'LOAD_EXAMPLES_PHOTOS';
 
 //fetch email
-export const FETCH_EMAIL = 'FETCH_EMAIL';
 export const EMAIL_INPUT_CHANGING = 'EMAIL_INPUT_CHANGING';
-export const EMAIL_URL = 'http://localhost:8000/api/mails';
+
+
+//notifications
+export const MAKE_NOTIFICATIONS = 'MAKE_NOTIFICATIONS';
+export const REMOVE_NOTIFICATIONS = 'REMOVE_NOTIFICATIONS';

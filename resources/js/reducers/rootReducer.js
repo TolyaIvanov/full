@@ -12,8 +12,11 @@ import {
 
 import {
 	emailChanging,
-	isEmailFetchSuccess
 } from "./subscribe/email";
+
+import {
+	notifications
+} from "./notifications/notifications";
 
 export default combineReducers({
 	fetchGalleryList,
@@ -21,5 +24,5 @@ export default combineReducers({
 	fetchGalleryListHasErrored,
 	fetchExamples,
 	emailChanging,
-	isEmailFetchSuccess,  //todo email notification
+	notifications,
 });

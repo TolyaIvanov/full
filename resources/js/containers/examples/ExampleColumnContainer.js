@@ -25,7 +25,7 @@ class ExampleColumnContainer extends React.Component {
 	renderStyleCols = data => {
 		let columns = [];
 
-		columns = data[0] ? [].concat(
+		columns = (data[0] && data[0].length > 0) ? [].concat(
 			[data[0].filter(col => col.style === 'Make art')],
 			[data[0].filter(col => col.style === 'Style transfer')],
 			[data[0].filter(col => col.style === 'Deep dream')]

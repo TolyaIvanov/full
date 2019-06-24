@@ -7,7 +7,7 @@
 
 Route::get('gallery', 'api\PhotosController@index');
 Route::get('examples', 'api\ExamplesController@index');
-Route::get('mails', 'api\MailsController@add'); // todo make post
+Route::post('mails', 'api\MailsController@add'); // todo make post
 
 Route::post('login', 'api\AuthController@login');
 Route::get('register', 'api\AuthController@register');

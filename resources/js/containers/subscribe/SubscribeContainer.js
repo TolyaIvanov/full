@@ -7,7 +7,7 @@ import {fetchEmail} from "../../actions/subscribe/fetchEmail";
 import {emailChanging} from "../../actions/subscribe/actionCreators";
 
 import {
-	FETCH_EMAIL
+	BASE_PATH
 } from "../../constants/defaultConstants";
 
 class SubscribeContainer extends React.Component {
@@ -28,7 +28,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	input: (event) => dispatch(emailChanging(event.target.value)),
-	send: () => dispatch(fetchEmail(FETCH_EMAIL))
+	send: () => dispatch(fetchEmail(`${BASE_PATH}mails`))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SubscribeContainer);

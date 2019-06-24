@@ -6,7 +6,7 @@ const Subscribe = props => (
 		<p className={'subscribe-text'}>Subscribe to us for mailing</p>
 		<form
 			className="send-wrapper"
-			onSubmit={props.send()}
+			onSubmit={props.send}
 		>
 			<input
 				placeholder={'Email'}

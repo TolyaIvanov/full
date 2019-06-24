@@ -1,10 +1,28 @@
 import {
-	isEmailFetchSuccess,
+	emailChanging
 } from './actionCreators';
 
-export const fetchEmail = url => {
+import {
+	addNotification
+} from "../notifications/notifications";
+
+import store from './../../store/store';
+
+export const fetchEmail = (url) => {
+	event.preventDefault();
+
 	return dispatch => {
-		fetch(url)
+		let email = store.getState().emailChanging.value;
+
+		fetch(url, {
+			method: 'POST',
+			body: JSON.stringify({
+				'email': email,
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
 			.then((response) => {
 				if (!response.ok) {
 					throw Error(response.statusText);
@@ -13,6 +31,8 @@ export const fetchEmail = url => {
 				return response;
 			})
 			.then(response => response.json())
-			.then(info => dispatch(isEmailFetchSuccess(info)));
+			.then(info => dispatch(addNotification(info, 'success')))
+			.then(() => dispatch(emailChanging('')));
 	}
 };
+
