@@ -20,6 +20,9 @@ export const LOAD_EXAMPLES_PHOTOS = 'LOAD_EXAMPLES_PHOTOS';
 //fetch email
 export const EMAIL_INPUT_CHANGING = 'EMAIL_INPUT_CHANGING';
 
+//mission form
+export const MISSION_INPUTS_CHANGING = 'MISSION_INPUTS_CHANGING';
+export const SEND_MISSION_FORM = 'SEND_MISSION_FORM';
 
 //notifications
 export const MAKE_NOTIFICATIONS = 'MAKE_NOTIFICATIONS';

@@ -1,9 +1,12 @@
 // files
 @import "header";
-@import "home";
+@import "home/home";
 @import "examples";
-@import "subscribe";
+@import "home/subscribe";
 @import "notifications";
+@import "home/about";
+@import "home/mission";
+@import "footer";
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
@@ -13,7 +16,6 @@
 body {
 	margin: 0;
 	padding: 0;
-	line-height: 1.4em;
 	font-size: 22px;
 	font-family: 'Maven Pro', 'Nunito', sans-serif;
 }

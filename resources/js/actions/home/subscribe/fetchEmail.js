@@ -4,9 +4,9 @@ import {
 
 import {
 	addNotification
-} from "../notifications/notifications";
+} from "../../notifications/notifications";
 
-import store from './../../store/store';
+import store from '../../../store/store';
 
 export const fetchEmail = (url) => {
 	event.preventDefault();
@@ -31,8 +31,15 @@ export const fetchEmail = (url) => {
 				return response;
 			})
 			.then(response => response.json())
-			.then(info => dispatch(addNotification(info, 'success')))
-			.then(() => dispatch(emailChanging('')));
+			.then(info => {
+				dispatch(addNotification(info, 'success'));
+				dispatch(emailChanging(''));
+			})
+			.then(() => dispatch(emailChanging('')))
+			.catch(info => {
+				dispatch(addNotification(info, 'fail'));
+				dispatch(emailChanging(''));
+			})
 	}
 };
 

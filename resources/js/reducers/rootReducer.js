@@ -1,10 +1,10 @@
-import { combineReducers } from "redux";
+import {combineReducers} from "redux";
 
-import  {
+import {
 	fetchGalleryList,
 	galleryIsLoading,
 	fetchGalleryListHasErrored,
-}from './gallery/galleryList'
+} from './gallery/galleryList'
 
 import {
 	fetchExamples
@@ -12,11 +12,15 @@ import {
 
 import {
 	emailChanging,
-} from "./subscribe/email";
+} from "./home/subscribe/email";
 
 import {
 	notifications
 } from "./notifications/notifications";
+
+import {
+	missionInputs
+} from "./home/mission/form";
 
 export default combineReducers({
 	fetchGalleryList,
@@ -25,4 +29,5 @@ export default combineReducers({
 	fetchExamples,
 	emailChanging,
 	notifications,
+	missionInputs
 });

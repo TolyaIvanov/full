@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from "react-redux";
 
-import Subscribe from './../../components/home/parts/Subscribe';
+import Subscribe from '../../../components/home/parts/Subscribe';
 
-import {fetchEmail} from "../../actions/subscribe/fetchEmail";
-import {emailChanging} from "../../actions/subscribe/actionCreators";
+import {fetchEmail} from "../../../actions/home/subscribe/fetchEmail";
+import {emailChanging} from "../../../actions/home/subscribe/actionCreators";
 
 import {
 	BASE_PATH
-} from "../../constants/defaultConstants";
+} from "../../../constants/defaultConstants";
 
 class SubscribeContainer extends React.Component {
 	render() {

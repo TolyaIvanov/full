@@ -1,0 +1,25 @@
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 5%;
+	height: 62px;
+	background-color: #313030;
+	width: 100%;
+
+	.logo-small {
+		height: 40px;
+	}
+
+	.social-icons {
+		width: 180px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.icon {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import {
 	EMAIL_INPUT_CHANGING,
-} from "../../constants/defaultConstants";
+} from "../../../constants/defaultConstants";
 
 export const emailChanging = (state = '', {value, type}) => {
 	switch (type) {
