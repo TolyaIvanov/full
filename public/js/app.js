@@ -31204,22 +31204,26 @@ var Footer = function Footer() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "social-icons"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
+    href: "https://www.facebook.com/neuroartai",
+    rel: 'nofollow'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_facebookLogo__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: 'icon',
     fill: '#fff'
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
+    href: "https://vk.com/neuroartai",
+    rel: 'nofollow'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_VkLogo__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: 'icon',
     fill: '#fff'
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
+    href: "http://t.me/neuroartai",
+    rel: 'nofollow'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_TelegramLogo__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: 'icon',
     fill: '#fff'
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
+    href: "https://www.instagram.com/neuroart.ai/",
+    rel: 'nofollow'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_InstagramLogo__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: 'icon',
     fill: '#fff'
@@ -32387,7 +32391,6 @@ function InstagramLogo(_ref) {
     x: "0px",
     y: "0px",
     viewBox: "0 0 169.063 169.063",
-    style: "enableBackground: new 0 0 169.063 169.063;",
     xmlSpace: "preserve"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     fill: fill,
@@ -32440,7 +32443,6 @@ function TelegramLogo(_ref) {
     x: "0px",
     y: "0px",
     viewBox: "0 0 512 512",
-    style: "enableBackground: new 0 0 512 512;",
     xmlSpace: "preserve"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     fill: fill,
@@ -32494,7 +32496,6 @@ function VkLogo(_ref) {
     x: "0px",
     y: "0px",
     viewBox: "0 0 548.358 548.358",
-    style: "enableBackground: new 0 0 548.358 548.358;",
     xmlSpace: "preserve"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     fill: fill,
@@ -32541,7 +32542,6 @@ function FacebookLogo(_ref) {
     x: "0px",
     y: "0px",
     viewBox: "0 0 96.124 96.123",
-    style: "enableBackground: new 0 0 96.124 96.123",
     xmlSpace: "preserve"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     fill: fill,

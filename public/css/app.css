@@ -425,6 +425,7 @@
   height: 62px;
   background-color: #313030;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .footer .logo-small {

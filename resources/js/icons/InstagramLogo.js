@@ -11,7 +11,6 @@ function InstagramLogo({className, fill}) {
 				xmlnsXlink="http://www.w3.org/1999/xlink"
 				x="0px" y="0px"
 				viewBox="0 0 169.063 169.063"
-				style="enableBackground: new 0 0 169.063 169.063;"
 				xmlSpace="preserve">
 				<g>
 					<path fill={fill} d="M122.406,0H46.654C20.929,0,0,20.93,0,46.655v75.752c0,25.726,20.929,46.655,46.654,46.655h75.752

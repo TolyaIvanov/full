@@ -11,7 +11,6 @@ function VkLogo({className, fill}) {
 				xmlnsXlink="http://www.w3.org/1999/xlink"
 				x="0px" y="0px"
 				viewBox="0 0 548.358 548.358"
-				style="enableBackground: new 0 0 548.358 548.358;"
 				xmlSpace="preserve">
 				<g>
 					<path fill={fill}

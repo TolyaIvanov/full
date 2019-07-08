@@ -11,9 +11,7 @@ function FacebookLogo({className, fill}) {
 				xmlnsXlink="http://www.w3.org/1999/xlink"
 				x="0px" y="0px"
 				viewBox="0 0 96.124 96.123"
-				style="enableBackground: new 0 0 96.124 96.123"
 				xmlSpace="preserve">
-
 				<g>
 					<path fill={fill}
 					      d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803

@@ -11,25 +11,25 @@ const Footer = () => (
 	<footer className={'footer'}>
 		<img className={'logo-small'} src={logoSmall} alt=""/>
 		<div className="social-icons">
-			<a href="">
+			<a href="https://www.facebook.com/neuroartai" rel={'nofollow'}>
 				<FacebookLogo
 					className={'icon'}
 					fill={'#fff'}
 				/>
 			</a>
-			<a href="">
+			<a href="https://vk.com/neuroartai" rel={'nofollow'}>
 				<VkLogo
 					className={'icon'}
 					fill={'#fff'}
 				/>
 			</a>
-			<a href="">
+			<a href="http://t.me/neuroartai" rel={'nofollow'}>
 				<TelegramLogo
 					className={'icon'}
 					fill={'#fff'}
 				/>
 			</a>
-			<a href="">
+			<a href="https://www.instagram.com/neuroart.ai/" rel={'nofollow'}>
 				<InstagramLogo
 					className={'icon'}
 					fill={'#fff'}

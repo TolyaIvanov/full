@@ -6,6 +6,9 @@
 	height: 62px;
 	background-color: #313030;
 	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 
 	.logo-small {
 		height: 40px;
