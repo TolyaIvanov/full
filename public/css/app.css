@@ -21,10 +21,8 @@
 
 .navbar .navbar-menu .navbar-item {
   font-size: 20px;
-  box-sizing: border-box;
   height: inherit;
-  margin-left: 12px;
-  padding: 5px 10px;
+  width: 110px;
   display: flex;
   align-items: center;
   transition: all 0.3s;
@@ -38,6 +36,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.navbar .navbar-menu .navbar-item .login-logo {
+  width: 32px;
 }
 
 .navbar .navbar-menu .navbar-item:hover {
@@ -332,7 +334,7 @@
 .mission {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin: 70px 0;
 }
 
 .mission .mission-content {
@@ -411,10 +413,6 @@
   margin-top: 35px;
   cursor: pointer;
   border-radius: 6px;
-}
-
-.mission .mission-content .form .send:active {
-  margin-left: 1px;
 }
 
 .footer {

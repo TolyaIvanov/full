@@ -21,12 +21,8 @@
 
 		.navbar-item {
 			font-size: 20px;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
 			height: inherit;
-			margin-left: 12px;
-			padding: 5px 10px;
+			width: 110px;
 			display: flex;
 			align-items: center;
 			-webkit-transition: all .3s;
@@ -43,6 +39,10 @@
 				display: flex;
 				justify-content: space-around;
 				align-items: center;
+			}
+
+			.login-logo {
+				width: 32px;
 			}
 		}
 

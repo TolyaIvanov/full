@@ -21,7 +21,7 @@ const About = props => (
 					(paper, canvas, cloth, mugs, clothes)! We will find a way to fulfill an order anywhere in the world.
 					Rest assured!</p>
 				<div className="buttons">
-					<Link className={'button example'} to={'/examples'}>see examples</Link>
+					<Link className={'button example'} to={'/gallery'}>see examples</Link>
 					<a className={'button order'} rel="nofollow" href="http://t.me/neuroartaibot" target="_blank">buy now</a>
 				</div>
 			</div>
