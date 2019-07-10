@@ -17,13 +17,13 @@ class GalleryListContainer extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				{this.renderPictureList(this.props.galleryData)}
+				{this.renderPictureList(this.props.galleryData.list)}
 			</Fragment>
 		);
 	}
 
 	renderPictureList = (images) => {
-		return images && images.map(image => (
+		return images.map(image => (
 				<Picture
 					key={image.id}
 					title={image.name}

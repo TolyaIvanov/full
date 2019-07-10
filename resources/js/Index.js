@@ -26,8 +26,8 @@ class Index extends Component {
 					<Switch>
 						<Route exact path={'/'} component={Home}/>
 						<Route path={'/gallery'} component={Gallery}/>
-						<Route path={'/login'} component={}/>
-						<Route path={'/registration'} component={}/>
+						{/*<Route path={'/login'} component={}/>*/}
+						{/*<Route path={'/registration'} component={}/>*/}
 						<Route path={'/try'} component={Try}/>
 						<Route component={Error}/>
 					</Switch>

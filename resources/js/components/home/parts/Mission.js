@@ -41,8 +41,8 @@ const Mission = props => (
 					onChange={(e) => {
 						props.onChange('message', e.target.value)
 					}}
+					value={props.messageValue}
 				>
-					{props.messageValue}
 				</textarea>
 				<input
 					type={'button'}

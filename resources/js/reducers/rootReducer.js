@@ -22,6 +22,15 @@ import {
 	missionInputs
 } from "./home/mission/form";
 
+import {
+	auth,
+	inputsValues
+} from './auth/authentication';
+
+import {
+	authErrors
+} from "./auth/authErrors";
+
 export default combineReducers({
 	fetchGalleryList,
 	galleryIsLoading,
@@ -29,5 +38,8 @@ export default combineReducers({
 	fetchExamples,
 	emailChanging,
 	notifications,
-	missionInputs
+	missionInputs,
+	auth,
+	authErrors,
+	inputsValues,
 });

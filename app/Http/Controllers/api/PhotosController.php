@@ -20,6 +20,6 @@ class PhotosController extends Controller
                 ->get()
         );
 
-        return $images->resource;
+        return $images->resource->toArray();
     }
 }

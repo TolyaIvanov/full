@@ -19,7 +19,7 @@ class MailsController extends Controller
         if ($validated_data->fails()) {
             $errors = $validated_data->errors()->toJson();
 
-            return response(['errors' => $errors], 422);
+            return response(['authErrors' => $errors], 422);
         }
 
         $mail = Mails::create($request->all());

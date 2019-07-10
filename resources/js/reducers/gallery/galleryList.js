@@ -1,11 +1,12 @@
 import {LOAD_GALLERY_PHOTO, GALLERY_IS_LOADING, GALLERY_LOAD_HAS_ERROR} from '../../constants/defaultConstants'
 
-export const fetchGalleryList = (state = [], {data, type}) => {
+
+export const fetchGalleryList = (state = {list: []}, {data, type}) => {
 	switch (type) {
 		case LOAD_GALLERY_PHOTO:
 			return {
 				...state,
-				data
+				list: data
 			};
 		default:
 			return state;
@@ -33,6 +34,5 @@ export const fetchGalleryListHasErrored = (state = false, {hasErrored, type}) =>
 			};
 		default:
 			return state;
-
 	}
 };
