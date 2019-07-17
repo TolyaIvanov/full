@@ -1,54 +1,54 @@
 import React from 'react';
 
-const Registration = () => {
+const Registration = (props) => {
 	return (
 		<div className={'registration'}>
 			<h2 className={'title'}>Registration</h2>
 			<form
 				className={'form'}
-				onSubmit={this.props.onSubmit}
+				onSubmit={props.onSubmit}
 			>
 				<input
 					className={'input'}
 					type="text"
 					placeholder="Name"
 					name="name"
-					onChange={(e) => this.props.onInput('name', e.target.value)}
-					value={this.props.name}
+					onChange={(e) => props.onInput('name', e.target.value)}
+					value={props.name}
 					autoComplete={'off'}
 				/>
-				{this.props.errors && (<div className="invalid-feedback">{this.props.errors.name}</div>)}
+				{props.errors && (<div className="invalid-feedback">{props.errors.name}</div>)}
 				<input
 					className={'input'}
 					type="email"
 					placeholder="Email"
 					name="email"
-					onChange={(e) => this.props.onInput('email', e.target.value)}
-					value={this.props.email}
+					onChange={(e) => props.onInput('email', e.target.value)}
+					value={props.email}
 					autoComplete={'off'}
 				/>
-				{this.props.errors && (<div className="invalid-feedback">{this.props.errors.email}</div>)}
+				{props.errors && (<div className="invalid-feedback">{props.errors.email}</div>)}
 				<input
 					className={'input'}
 					type="password"
 					placeholder="Password"
 					name="password"
-					onChange={(e) => this.props.onInput('password', e.target.value)}
-					value={this.props.password}
+					onChange={(e) => props.onInput('password', e.target.value)}
+					value={props.password}
 					autoComplete={'off'}
 				/>
-				{this.props.errors && (<div className="invalid-feedback">{this.props.errors.password}</div>)}
+				{props.errors && (<div className="invalid-feedback">{props.errors.password}</div>)}
 				<input
 					className={'input'}
 					type="password"
 					placeholder="Confirm Password"
 					name="c_password"
-					onChange={(e) => this.props.onInput('c_password', e.target.value)}
-					value={this.props.password_confirm}
+					onChange={(e) => props.onInput('c_password', e.target.value)}
+					value={props.password_confirm}
 					autoComplete={'off'}
 				/>
-				{this.props.errors && (
-					<div className="invalid-feedback">{this.props.errors.password_confirm}</div>)}
+				{props.errors && (
+					<div className="invalid-feedback">{props.errors.password_confirm}</div>)}
 				<button
 					className={'submit'}
 				>

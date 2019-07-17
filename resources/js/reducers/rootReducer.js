@@ -31,6 +31,10 @@ import {
 	authErrors
 } from "./auth/authErrors";
 
+import {
+	menu
+} from "./header/menu";
+
 export default combineReducers({
 	fetchGalleryList,
 	galleryIsLoading,
@@ -42,4 +46,5 @@ export default combineReducers({
 	auth,
 	authErrors,
 	inputsValues,
+	menu,
 });

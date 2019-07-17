@@ -74,3 +74,60 @@
 		}
 	}
 }
+
+@media screen and (max-width: 1160px) {
+	.home {
+		.container {
+			flex-direction: column;
+		}
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.home {
+		.container {
+			.home-text {
+				width: 400px;
+
+				.intro-text {
+					font-size: 35px;
+					text-align: center;
+				}
+
+				.buttons {
+					margin: 10px 0 20px 0;
+				}
+			}
+
+			.home-picture {
+				width: 400px;
+
+				img {
+					width: 400px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 465px) {
+	.home {
+		.container {
+			.home-text {
+				width: 375px;
+
+				.buttons {
+					margin: 10px 0 20px 0;
+				}
+			}
+
+			.home-picture {
+				width: 400px;
+
+				img {
+					width: 400px;
+				}
+			}
+		}
+	}
+}

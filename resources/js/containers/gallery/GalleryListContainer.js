@@ -1,5 +1,7 @@
 import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
+
 import {BASE_PATH, LOAD_PARAM, GALLERY_CHUNK} from '../../constants/defaultConstants'
 
 import {fetchGalleryList} from '../../actions/gallery/fetchGalleryList'
@@ -43,4 +45,4 @@ const mapDispatchToProps = (dispatch) => ({
 	fetchData: (url) => dispatch(fetchGalleryList(url))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GalleryListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(GalleryListContainer));

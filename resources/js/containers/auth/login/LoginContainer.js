@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
 import Login from './../../../components/auth/login/Login';
 
@@ -38,4 +39,4 @@ const mapDispatchToProps = dispatch => ({
 	change: (key, value) => dispatch(loginInputsValue(key, value)),
 	handleErrors: (data) => dispatch(getErrors(data)),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoginContainer));

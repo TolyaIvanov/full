@@ -7,7 +7,6 @@ import {
 	getErrors,
 	setCurrentUser,
 	clearInputs,
-	setCurrentUser
 } from './actionCreator';
 
 export const registerUser = (event) => {

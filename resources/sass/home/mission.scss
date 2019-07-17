@@ -80,3 +80,54 @@
 		}
 	}
 }
+
+@media screen and (max-width: 900px) {
+	.mission {
+		margin-top: 30px;
+		padding: 0 15px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		.img-wrapper {
+			display: none;
+		}
+
+		.mission-content {
+			text-align: center;
+			margin: 0;
+
+			.section-title {
+				font-size: 35px;
+			}
+
+			.section-text {
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.mission {
+		.mission-content {
+			.form {
+				.info {
+					flex-direction: column;
+
+					.input {
+						width: inherit;
+
+						&:first-child {
+							margin-bottom: 25px;
+						}
+					}
+				}
+
+				.message {
+					height: 100px;
+				}
+			}
+		}
+	}
+}

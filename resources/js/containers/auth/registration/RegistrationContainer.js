@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
 import Registration from './../../../components/auth/registration/Registration';
 
@@ -41,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
 	handleErrors: (data) => dispatch(getErrors(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegistrationContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(RegistrationContainer));

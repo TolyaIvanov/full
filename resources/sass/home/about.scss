@@ -72,3 +72,59 @@
 		}
 	}
 }
+
+@media screen and (max-width: 1100px) {
+	.about {
+		.content {
+			flex-direction: column-reverse;
+			align-items: center;
+
+			.content-main {
+				margin-bottom: 50px;
+
+				.section-title {
+					font-size: 40px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.about {
+		.section-title {
+			font-size: 35px;
+			margin: 30px 0 16px 0;
+		}
+
+		.content {
+			padding: 0 10px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+
+			.about-photo {
+				margin: 0;
+			}
+
+			.content-main {
+				margin-bottom: 25px;
+
+				.section-title {
+					font-size: 25px;
+					text-align: center;
+				}
+
+				.buttons {
+					margin-top: 15px;
+					flex-direction: column;
+					align-self: center;
+				}
+
+				.order {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}

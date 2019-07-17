@@ -54,3 +54,30 @@
 		}
 	}
 }
+
+@media screen and (max-width: 700px){
+	.subscribe {
+		.subscribe-title, .subscribe-text {
+			margin-bottom: 20px;
+		}
+
+		.subscribe-title {
+			font-size: 28px;
+		}
+
+		.send-wrapper {
+			.subscribe-email {
+				width: 280px;
+			}
+
+			.subscribe-submit {
+				width: 110px;
+			}
+
+			.subscribe-email, .subscribe-submit {
+				font-size: 16px;
+
+			}
+		}
+	}
+}
