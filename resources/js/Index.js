@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, lazy, Suspense} from 'react'
 import ReactDOM from 'react-dom'
 import {Router, Route, Switch} from "react-router-dom"
 import {Provider} from 'react-redux'
@@ -8,12 +8,13 @@ import store from './store/store'
 import Error from './Error'
 import HeaderContainer from './containers/header/HeaderContainer'
 import Footer from './components/footer/Footer'
-import Home from './components/home/Home'
-import Gallery from './components/gallery/Gallery'
-import Try from './components/try/Try'
 import NotificationContainer from './containers/notifications/NotificationContainer'
-import LoginContainer from './containers/auth/login/LoginContainer'
-import RegistrationContainer from './containers/auth/registration/RegistrationContainer'
+
+const Home = lazy(() => import('./components/home/Home'));
+const Gallery = lazy(() => import('./components/gallery/Gallery'));
+const Try = lazy(() => import('./components/try/Try'));
+const LoginContainer = lazy(() => import('./containers/auth/login/LoginContainer'));
+const RegistrationContainer = lazy(() => import('./containers/auth/registration/RegistrationContainer'));
 
 
 class Index extends Component {
@@ -22,14 +23,16 @@ class Index extends Component {
 			<Provider store={store}>
 				<Router history={history}>
 					<HeaderContainer/>
-					<Switch>
-						<Route exact path={'/'} component={Home}/>
-						<Route path={'/gallery'} component={Gallery}/>
-						<Route path={'/login'} component={LoginContainer}/>
-						<Route path={'/registration'} component={RegistrationContainer}/>
-						<Route path={'/try'} component={Try}/>
-						<Route component={Error}/>
-					</Switch>
+					<Suspense fallback={<p>kek</p>}>
+						<Switch>
+							<Route exact path={'/'} component={Home}/>
+							<Route path={'/gallery'} component={Gallery}/>
+							<Route path={'/login'} component={LoginContainer}/>
+							<Route path={'/registration'} component={RegistrationContainer}/>
+							<Route path={'/try'} component={Try}/>
+							<Route component={Error}/>
+						</Switch>
+					</Suspense>
 					<Footer/>
 					<NotificationContainer/>
 				</Router>

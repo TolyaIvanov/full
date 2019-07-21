@@ -168,8 +168,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  height: 100vh;
-  padding-top: 65px;
+  min-height: 100vh;
+  padding: 65px 0;
   background: #f6f2f2;
   box-sizing: border-box;
 }
@@ -235,15 +235,22 @@
 
 .home .container .home-picture {
   width: 512px;
+  height: 360px;
 }
 
 @media screen and (max-width: 1160px) {
   .home .container {
     flex-direction: column;
+    justify-content: flex-start;
   }
 }
 
 @media screen and (max-width: 580px) {
+  .home {
+    min-height: 100%;
+    padding: 70px 0 35px 0;
+  }
+
   .home .container .home-text {
     width: 400px;
   }
@@ -259,6 +266,7 @@
 
   .home .container .home-picture {
     width: 400px;
+    height: 282px;
   }
 
   .home .container .home-picture img {
@@ -273,14 +281,6 @@
 
   .home .container .home-text .buttons {
     margin: 10px 0 20px 0;
-  }
-
-  .home .container .home-picture {
-    width: 400px;
-  }
-
-  .home .container .home-picture img {
-    width: 400px;
   }
 }
 
@@ -481,7 +481,12 @@
 }
 
 .about .content .about-photo {
-  margin-right: 35px;
+  margin-right: 25px;
+  width: 440px;
+}
+
+.about .content .about-photo img {
+  width: 440px;
 }
 
 .about .content .content-main {
@@ -528,6 +533,10 @@
     align-items: center;
   }
 
+  .about .content .about-photo {
+    margin: 0;
+  }
+
   .about .content .content-main {
     margin-bottom: 50px;
   }
@@ -549,7 +558,11 @@
   }
 
   .about .content .about-photo {
-    margin: 0;
+    width: 400px;
+  }
+
+  .about .content .about-photo img {
+    width: 400px;
   }
 
   .about .content .content-main {
@@ -576,6 +589,19 @@
   display: flex;
   justify-content: center;
   margin: 70px 0;
+}
+
+.mission .img-wrapper {
+  width: 280px;
+  border-radius: 50px;
+}
+
+.mission .img-wrapper .preview-wrapper {
+  border-radius: 50px;
+}
+
+.mission .img-wrapper img {
+  width: 280px;
 }
 
 .mission .mission-content {
@@ -807,6 +833,42 @@
   background-color: #ffe8e8;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+.progressive-image-wrapper {
+  display: flex;
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+
+.progressive-image-wrapper .preview-wrapper {
+  transition: opacity 100ms 400ms;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progressive-image-wrapper .preview-wrapper .preview {
+  width: inherit;
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.progressive-image-wrapper .preview-wrapper.hidden {
+  opacity: 0;
+}
+
+.progressive-image-wrapper .image {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 400ms ease 0ms;
+}
+
+.progressive-image-wrapper .image.visible {
+  opacity: 1;
 }
 
 body {

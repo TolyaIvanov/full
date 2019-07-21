@@ -1,6 +1,11 @@
 import React from 'react';
-import about from './../../../../images/about.png';
 import {Link} from "react-router-dom";
+
+import about from '../../../../images/large/about.png';
+import aboutSmall from '../../../../images/small/aboutSmall.png'
+
+import ProgressiveImage from './../../ProgressiveImage'
+
 
 const About = props => (
 	<section className={'about'}>
@@ -10,7 +15,13 @@ const About = props => (
 			paintings using Artificial Intelligence algorithms!</p>
 
 		<div className="content">
-			<img className={'about-photo'} src={about} alt=""/>
+			<div className="about-photo">
+				<ProgressiveImage
+					image={about}
+					preview={aboutSmall}
+					alt={'image'}
+				/>
+			</div>
 			<div className="content-main">
 				<h2 className={'section-title'}>You can either create a new
 					painted art or
@@ -22,7 +33,8 @@ const About = props => (
 					Rest assured!</p>
 				<div className="buttons">
 					<Link className={'button example'} to={'/gallery'}>see examples</Link>
-					<a className={'button order'} rel="nofollow" href="http://t.me/neuroartaibot" target="_blank">buy now</a>
+					<a className={'button order'} rel="nofollow" href="http://t.me/neuroartaibot" target="_blank">buy
+						now</a>
 				</div>
 			</div>
 		</div>

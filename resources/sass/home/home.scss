@@ -4,8 +4,8 @@
 	display: flex;
 	justify-content: center;
 	position: relative;
-	height: 100vh;
-	padding-top: 65px;
+	min-height: 100vh;
+	padding: 65px 0;
 	background: #f6f2f2;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -71,6 +71,7 @@
 
 		.home-picture {
 			width: 512px;
+			height: 360px;
 		}
 	}
 }
@@ -79,12 +80,16 @@
 	.home {
 		.container {
 			flex-direction: column;
+			justify-content: flex-start;
 		}
 	}
 }
 
 @media screen and (max-width: 580px) {
 	.home {
+		min-height: 100%;
+		padding: 70px 0 35px 0;
+
 		.container {
 			.home-text {
 				width: 400px;
@@ -101,6 +106,7 @@
 
 			.home-picture {
 				width: 400px;
+				height: 282px;
 
 				img {
 					width: 400px;
@@ -118,14 +124,6 @@
 
 				.buttons {
 					margin: 10px 0 20px 0;
-				}
-			}
-
-			.home-picture {
-				width: 400px;
-
-				img {
-					width: 400px;
 				}
 			}
 		}

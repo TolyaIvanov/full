@@ -3,6 +3,19 @@
 	justify-content: center;
 	margin: 70px 0;
 
+	.img-wrapper {
+		width: 280px;
+		border-radius: 50px;
+
+		.preview-wrapper {
+			border-radius: 50px;
+		}
+
+		img {
+			width: 280px;
+		}
+	}
+
 	.mission-content {
 		display: flex;
 		flex-direction: column;

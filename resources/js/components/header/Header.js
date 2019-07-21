@@ -1,13 +1,15 @@
 import React from 'react'
 import {Link, NavLink} from "react-router-dom";
 
+import logoSmall from './../../../images/large/logo-small.png'
+
 import LoginLogo from './../../icons/LoginLogo';
 
 class Header extends React.Component {
 	render() {
 		return (
 			<header className="navbar">
-				<div className="navbar-item-logo"><Link to="/"><img src="./images/logo-small.png"/></Link></div>
+				<div className="navbar-item-logo"><Link to="/"><img src={logoSmall}/></Link></div>
 				<div className="menu-wrapper">
 					<div
 						className={this.props.isOpened ? "menu-button-wrapper active" : "menu-button-wrapper"}

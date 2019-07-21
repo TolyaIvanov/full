@@ -3,15 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=450, initial-scale=1">
+    <meta id="vp" name="viewport" content="width=device-width">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>egor shop</title>
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script>
+	    window.onload = function() {
+		    if (screen.width < 450) {
+			    var mvp = document.getElementById('vp');
+			    mvp.setAttribute('content','width=450');
+		    }
+	    }
+    </script>
 </head>
 <body>
 <div id="root"></div>
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

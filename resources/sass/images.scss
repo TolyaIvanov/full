@@ -1,0 +1,45 @@
+.progressive-image-wrapper {
+	display: flex;
+	position: relative;
+	width: inherit;
+	height: inherit;
+
+	.preview-wrapper {
+		-webkit-transition: opacity 100ms 400ms;
+		-moz-transition: opacity 100ms 400ms;
+		-ms-transition: opacity 100ms 400ms;
+		-o-transition: opacity 100ms 400ms;
+		transition: opacity 100ms 400ms;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+
+		.preview {
+			width: inherit;
+			filter: blur(20px);
+			-webkit-transform: scale(1.1);
+			-moz-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			-o-transform: scale(1.1);
+			transform: scale(1.1);
+		}
+
+		&.hidden {
+			opacity: 0;
+		}
+	}
+
+	.image {
+		position: absolute;
+		opacity: 0;
+		-webkit-transition: opacity 400ms ease 0ms;
+		-moz-transition: opacity 400ms ease 0ms;
+		-ms-transition: opacity 400ms ease 0ms;
+		-o-transition: opacity 400ms ease 0ms;
+		transition: opacity 400ms ease 0ms;
+
+		&.visible {
+			opacity: 1;
+		}
+	}
+}

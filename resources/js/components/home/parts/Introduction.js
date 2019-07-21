@@ -1,5 +1,9 @@
 import React from 'react';
-import picturePhoto from "./../../../../images/picture.png";
+
+import picturePhoto from "../../../../images/large/picture.png";
+import smallPicturePhoto from '../../../../images/small/pictureSmall.png';
+
+import ProgressiveImage from './../../ProgressiveImage'
 
 const Introduction = props => (
 	<section className={'home'}>
@@ -19,7 +23,11 @@ const Introduction = props => (
 				</div>
 			</div>
 			<div className="home-picture">
-				<img src={picturePhoto} alt=""/>
+				<ProgressiveImage
+					image={picturePhoto}
+					preview={smallPicturePhoto}
+					alt={'image'}
+				/>
 			</div>
 		</div>
 	</section>

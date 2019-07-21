@@ -1,6 +1,6 @@
 import React from 'react'
 
-import logoSmall from './../../../images/logo-small.png'
+import logoSmall from '../../../images/large/logo-small.png'
 
 import FacebookLogo from '../../icons/facebookLogo'
 import VkLogo from '../../icons/VkLogo'

@@ -1,6 +1,9 @@
 import React from 'react';
 
-import phone from './../../../../images/phone.png';
+import ProgressiveImage from './../../ProgressiveImage'
+
+import phone from '../../../../images/large/phone.png';
+import phoneSmall from '../../../../images/small/phoneSmall.png'
 
 const Mission = props => (
 	<section className={'mission'}>
@@ -51,9 +54,17 @@ const Mission = props => (
 				/>
 			</form>
 		</div>
-		<div className="img-wrapper">
-			<img src={phone} alt=""/>
-		</div>
+		{
+			window.innerWidth > 900 &&
+			<div className="img-wrapper">
+				<ProgressiveImage
+					image={phone}
+					preview={phoneSmall}
+					alt={'image'}
+				/>
+			</div>
+		}
+
 	</section>
 );
 
