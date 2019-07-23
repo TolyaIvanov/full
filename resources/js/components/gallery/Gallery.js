@@ -1,15 +1,12 @@
-import React from 'react'
+import React, {memo} from 'react'
 import GalleryList from '../../containers/gallery/GalleryListContainer'
 
-class Gallery extends React.Component {
-	render() {
-		return (
-			<section className={'gallery'}>
-				gallery
-				<GalleryList/>
-			</section>
-		);
-	}
-}
+const Gallery = memo((props) => (
+	<section className={'gallery'}>
+		gallery
+		<GalleryList/>
+	</section>
+));
+
 
 export default Gallery;

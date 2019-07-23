@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import ProgressiveImage from './../../ProgressiveImage'
 
 import phone from '../../../../images/large/phone.png';
 import phoneSmall from '../../../../images/small/phoneSmall.png'
 
-const Mission = props => (
+const Mission = memo((props) => (
 	<section className={'mission'}>
 		<div className="mission-content">
 			<h2 className={'section-title'}>our mission</h2>
@@ -66,6 +66,6 @@ const Mission = props => (
 		}
 
 	</section>
-);
+));
 
 export default Mission;

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, memo} from 'react';
 
 import Introduction from './parts/Introduction';
 import Examples from './parts/examples/Examples';
@@ -6,7 +6,7 @@ import SubscribeContainer from '../../containers/home/subscribe/SubscribeContain
 import MissionContainer from './../../containers/home/mission/MissionContainer';
 import About from './parts/About'
 
-const Home = () => (
+const Home = memo(() => (
 	<Fragment>
 		<Introduction/>
 		<Examples/>
@@ -14,6 +14,6 @@ const Home = () => (
 		<About/>
 		<MissionContainer/>
 	</Fragment>
-);
+));
 
 export default Home;

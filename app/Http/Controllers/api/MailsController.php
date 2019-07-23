@@ -19,11 +19,16 @@ class MailsController extends Controller
         if ($validated_data->fails()) {
             $errors = $validated_data->errors()->toJson();
 
-            return response(['authErrors' => $errors], 422);
+            return response(['emailErrors' => $errors], 422);
         }
 
         $mail = Mails::create($request->all());
 
         return response(['data' => $mail], 200);
+    }
+
+    public function send(Request $request)
+    {
+
     }
 }

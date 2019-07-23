@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import ExamplesPhotoCols from '../../../../containers/examples/ExampleColumnContainer'
 
-const Examples = props => (
+const Examples = memo((props) => (
 	<section className={'examples'}>
 		<div className="examples-text">
 			<h3 className={'examples-title'}>examples</h3>
@@ -13,6 +13,6 @@ const Examples = props => (
 			<ExamplesPhotoCols/>
 		</div>
 	</section>
-);
+));
 
 export default Examples;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {memo} from 'react';
 
-const Subscribe = props => (
+const Subscribe = memo((props) => (
 	<section className={'subscribe'}>
 		<h2 className={'subscribe-title'}>don't miss our latest news !</h2>
 		<p className={'subscribe-text'}>Subscribe to us for mailing</p>
@@ -21,6 +21,6 @@ const Subscribe = props => (
 			/>
 		</form>
 	</section>
-);
+));
 
 export default Subscribe

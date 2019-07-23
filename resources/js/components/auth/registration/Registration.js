@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {memo} from 'react';
 
-const Registration = (props) => {
+const Registration = memo((props) => {
 	return (
 		<div className={'registration'}>
 			<h2 className={'title'}>Registration</h2>
@@ -11,10 +11,10 @@ const Registration = (props) => {
 				<input
 					className={'input'}
 					type="text"
-					placeholder="Name"
-					name="name"
-					onChange={(e) => props.onInput('name', e.target.value)}
-					value={props.name}
+					placeholder="Username"
+					name="username"
+					onChange={(e) => props.onInput('username', e.target.value)}
+					value={props.username}
 					autoComplete={'off'}
 				/>
 				{props.errors && (<div className="invalid-feedback">{props.errors.name}</div>)}
@@ -57,6 +57,6 @@ const Registration = (props) => {
 			</form>
 		</div>
 	);
-};
+});
 
 export default Registration;

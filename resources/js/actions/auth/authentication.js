@@ -18,12 +18,10 @@ export const registerUser = (event) => {
 		axios.post('/api/register', user)
 			.then(res => {
 				const {token} = res.data;
-				const decoded = jwt_decode(token);
 
 				localStorage.setItem('token', token);
 				setAuthToken(token);
-
-				dispatch(setCurrentUser(decoded));
+				dispatch(setCurrentUser({username: res.username, token}));
 			})
 			.then(() => history.push('/'))
 			.catch(err => {
@@ -44,12 +42,14 @@ export const loginUser = (event) => {
 		axios.post('/api/login', user)
 			.then(res => {
 				const {token} = res.data;
-				const decoded = jwt_decode(token);
+
+				dispatch(setCurrentUser({username: res.username, token}));
 
 				localStorage.setItem('token', token);
 				setAuthToken(token);
-
-				dispatch(setCurrentUser(decoded));
+			})
+			.then((res) => {
+				history.push('/')
 			})
 			.catch(err => {
 				dispatch(getErrors(err.response));
@@ -58,7 +58,7 @@ export const loginUser = (event) => {
 };
 
 export const logoutUser = () => dispatch => {
-	localStorage.removeItem('jwtToken');
+	localStorage.removeItem('token');
 	setAuthToken(false);
 	dispatch(setCurrentUser({}));
 	dispatch(clearInputs());

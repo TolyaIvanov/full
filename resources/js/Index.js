@@ -16,6 +16,7 @@ const Try = lazy(() => import('./components/try/Try'));
 const LoginContainer = lazy(() => import('./containers/auth/login/LoginContainer'));
 const RegistrationContainer = lazy(() => import('./containers/auth/registration/RegistrationContainer'));
 
+const AdminPanelContainer = lazy(() => import('./containers/admin/AdminPanelContainer'))
 
 class Index extends Component {
 	render() {
@@ -23,13 +24,15 @@ class Index extends Component {
 			<Provider store={store}>
 				<Router history={history}>
 					<HeaderContainer/>
-					<Suspense fallback={<p>kek</p>}>
+					<Suspense fallback={null}>
 						<Switch>
 							<Route exact path={'/'} component={Home}/>
+							{/*<Route path={'/'} component={}/>*/}
 							<Route path={'/gallery'} component={Gallery}/>
 							<Route path={'/login'} component={LoginContainer}/>
-							<Route path={'/registration'} component={RegistrationContainer}/>
+							<Route path={'/signup'} component={RegistrationContainer}/>
 							<Route path={'/try'} component={Try}/>
+							<Route path={'/admin'} component={AdminPanelContainer}/>
 							<Route component={Error}/>
 						</Switch>
 					</Suspense>

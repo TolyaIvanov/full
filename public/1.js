@@ -365,11 +365,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var Home = function Home() {
+var Home = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_parts_Introduction__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_parts_examples_Examples__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_home_subscribe_SubscribeContainer__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_parts_About__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_home_mission_MissionContainer__WEBPACK_IMPORTED_MODULE_4__["default"], null));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
@@ -396,8 +394,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var About = function About(props) {
+var About = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: 'about'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -425,12 +422,11 @@ var About = function About(props) {
     to: '/gallery'
   }, "see examples"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: 'button order',
-    rel: "nofollow",
+    rel: "noreferrer",
     href: "http://t.me/neuroartaibot",
     target: "_blank"
   }, "buy now")))));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (About);
 
 /***/ }),
@@ -455,8 +451,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var Introduction = function Introduction(props) {
+var Introduction = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: 'home'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -480,8 +475,7 @@ var Introduction = function Introduction(props) {
     preview: _images_small_pictureSmall_png__WEBPACK_IMPORTED_MODULE_2___default.a,
     alt: 'image'
   }))));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (Introduction);
 
 /***/ }),
@@ -506,8 +500,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var Mission = function Mission(props) {
+var Mission = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: 'mission'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -557,8 +550,7 @@ var Mission = function Mission(props) {
     preview: _images_small_phoneSmall_png__WEBPACK_IMPORTED_MODULE_3___default.a,
     alt: 'image'
   })));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (Mission);
 
 /***/ }),
@@ -575,8 +567,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-
-var Subscribe = function Subscribe(props) {
+var Subscribe = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: 'subscribe'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -596,8 +587,7 @@ var Subscribe = function Subscribe(props) {
     className: 'subscribe-submit',
     value: 'subscribe'
   })));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (Subscribe);
 
 /***/ }),
@@ -614,8 +604,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-
-var ExampleColumn = function ExampleColumn(props) {
+var ExampleColumn = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "column"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -624,15 +613,14 @@ var ExampleColumn = function ExampleColumn(props) {
     className: "style-image-wrapper"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: props.firstUri,
-    alt: ""
+    alt: "image"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "style-image-wrapper"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: props.secondUri,
-    alt: ""
+    alt: "image"
   })));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (ExampleColumn);
 
 /***/ }),
@@ -651,8 +639,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_examples_ExampleColumnContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../containers/examples/ExampleColumnContainer */ "./resources/js/containers/examples/ExampleColumnContainer.js");
 
 
-
-var Examples = function Examples(props) {
+var Examples = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: 'examples'
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -664,8 +651,7 @@ var Examples = function Examples(props) {
   }, "Choose one of the several types of NeuroArt.AI. We have 3 types like Make Art, Style Transfer and Deep Dream. Let\u2019s see some examples.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "styles"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_examples_ExampleColumnContainer__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
-};
-
+});
 /* harmony default export */ __webpack_exports__["default"] = (Examples);
 
 /***/ }),

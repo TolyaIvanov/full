@@ -19,7 +19,7 @@ class RegistrationContainer extends Component {
 			<Registration
 				onInput={this.props.change}
 				onSubmit={this.props.register}
-				name={this.props.values['name']}
+				username={this.props.values['username']}
 				email={this.props.values['email']}
 				password={this.props.values['password']}
 				password_confirm={this.props.values['c_password']}

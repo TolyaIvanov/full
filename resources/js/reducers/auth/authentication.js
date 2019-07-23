@@ -13,7 +13,7 @@ const initialAuthState = {
 };
 
 const initialValuesState = {
-	'name': '',
+	'username': '',
 	'email': '',
 	'password': '',
 	'c_password': '',

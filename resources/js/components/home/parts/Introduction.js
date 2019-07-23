@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import picturePhoto from "../../../../images/large/picture.png";
 import smallPicturePhoto from '../../../../images/small/pictureSmall.png';
 
 import ProgressiveImage from './../../ProgressiveImage'
 
-const Introduction = props => (
+const Introduction = memo((props) => (
 	<section className={'home'}>
 		<div className="container">
 			<div className="home-text">
@@ -31,6 +31,6 @@ const Introduction = props => (
 			</div>
 		</div>
 	</section>
-);
+));
 
 export default Introduction;

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Link} from "react-router-dom";
 
-const Login = (props) => {
+const Login = memo((props) => {
 	return (
 		<div className={'login'}>
 			<p className={'login-or-reg'}>
 				<span className={'title'}>Login </span>
 				or{' '}
-				<Link className={'link-to-reg'} to={'/registration'}>
+				<Link className={'link-to-reg'} to={'/signup'}>
 					sign up
 				</Link>
 			</p>
@@ -44,6 +44,6 @@ const Login = (props) => {
 			</form>
 		</div>
 	);
-};
+});
 
 export default Login;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Link} from "react-router-dom";
 
 import about from '../../../../images/large/about.png';
@@ -7,7 +7,7 @@ import aboutSmall from '../../../../images/small/aboutSmall.png'
 import ProgressiveImage from './../../ProgressiveImage'
 
 
-const About = props => (
+const About = memo((props) => (
 	<section className={'about'}>
 		<h2 className={'section-title'}>about us</h2>
 		<p className={'section-text'}>Enjoy contemporary AI art. Be original. {"\n"}
@@ -33,12 +33,12 @@ const About = props => (
 					Rest assured!</p>
 				<div className="buttons">
 					<Link className={'button example'} to={'/gallery'}>see examples</Link>
-					<a className={'button order'} rel="nofollow" href="http://t.me/neuroartaibot" target="_blank">buy
+					<a className={'button order'} rel="noreferrer" href="http://t.me/neuroartaibot" target="_blank">buy
 						now</a>
 				</div>
 			</div>
 		</div>
 	</section>
-);
+));
 
 export default About;

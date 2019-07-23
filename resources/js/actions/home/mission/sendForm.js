@@ -6,6 +6,10 @@ import {
 	addNotification
 } from "../../notifications/notifications";
 
+import {
+	BASE_PATH
+} from "../../../constants/defaultConstants";
+
 import store from './../../../store/store'
 
 export const fetchFeedback = () => {
@@ -16,7 +20,7 @@ export const fetchFeedback = () => {
 		let name = store.getState().missionInputs.name;
 		let message = store.getState().missionInputs.message;
 
-		fetch('', {
+		fetch(`${BASE_PATH}send/email`, {
 			method: 'POST',
 
 		})
