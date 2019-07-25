@@ -43,8 +43,6 @@ class AuthController extends Controller
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
-            $user['active'] = 1;
-            $user['deleted_at'] = null;
 
             return $this->createUserToken($user);
         } else {
@@ -85,14 +83,14 @@ class AuthController extends Controller
 
     private function createUserToken($user)
     {
-        $tokenResult = $user->createToken('Personal Access Token');
+        $tokenResult = $user->createToken('egor-shop sdelano tolej');
         $token = $tokenResult->token;
         $token->expires_at = Carbon::now()->addWeeks(53);
         $token->save();
 
         return response()->json([
-            'username' => $user['username'],
-            'access_token' => $tokenResult->accessToken,
+
+            'token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse(
                 $tokenResult->token->expires_at

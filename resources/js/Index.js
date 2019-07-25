@@ -1,22 +1,26 @@
-import React, {Component, lazy, Suspense} from 'react'
+import React, {Component, Suspense} from 'react'
 import ReactDOM from 'react-dom'
-import {Router, Route, Switch} from "react-router-dom"
+import {Router} from "react-router-dom"
 import {Provider} from 'react-redux'
 import history from './history/history'
 import store from './store/store'
+import setAuthToken from './setAuthToken'
+import {
+	setCurrentUser
+} from "./actions/auth/actionCreator";
 
-import Error from './Error'
+import Routes from './Routes'
 import HeaderContainer from './containers/header/HeaderContainer'
 import Footer from './components/footer/Footer'
 import NotificationContainer from './containers/notifications/NotificationContainer'
 
-const Home = lazy(() => import('./components/home/Home'));
-const Gallery = lazy(() => import('./components/gallery/Gallery'));
-const Try = lazy(() => import('./components/try/Try'));
-const LoginContainer = lazy(() => import('./containers/auth/login/LoginContainer'));
-const RegistrationContainer = lazy(() => import('./containers/auth/registration/RegistrationContainer'));
+const token = localStorage.getItem('token');
 
-const AdminPanelContainer = lazy(() => import('./containers/admin/AdminPanelContainer'))
+if (token) {
+	console.log(token);
+	setAuthToken(token);
+	store.dispatch(setCurrentUser(token));
+}
 
 class Index extends Component {
 	render() {
@@ -25,16 +29,7 @@ class Index extends Component {
 				<Router history={history}>
 					<HeaderContainer/>
 					<Suspense fallback={null}>
-						<Switch>
-							<Route exact path={'/'} component={Home}/>
-							{/*<Route path={'/'} component={}/>*/}
-							<Route path={'/gallery'} component={Gallery}/>
-							<Route path={'/login'} component={LoginContainer}/>
-							<Route path={'/signup'} component={RegistrationContainer}/>
-							<Route path={'/try'} component={Try}/>
-							<Route path={'/admin'} component={AdminPanelContainer}/>
-							<Route component={Error}/>
-						</Switch>
+						<Routes/>
 					</Suspense>
 					<Footer/>
 					<NotificationContainer/>

@@ -2,6 +2,7 @@ import axios from 'axios';
 import store from './../../store/store';
 import history from './../../history/history';
 import setAuthToken from './../../setAuthToken';
+import Index from './../../Index'
 
 import {
 	getErrors,
@@ -15,13 +16,13 @@ export const registerUser = (event) => {
 	return dispatch => {
 		let user = store.getState().inputsValues;
 
-		axios.post('/api/register', user)
+		axios.post('/api/signup', user)
 			.then(res => {
 				const {token} = res.data;
 
 				localStorage.setItem('token', token);
 				setAuthToken(token);
-				dispatch(setCurrentUser({username: res.username, token}));
+				dispatch(setCurrentUser(token));
 			})
 			.then(() => history.push('/'))
 			.catch(err => {
@@ -43,12 +44,11 @@ export const loginUser = (event) => {
 			.then(res => {
 				const {token} = res.data;
 
-				dispatch(setCurrentUser({username: res.username, token}));
-
 				localStorage.setItem('token', token);
 				setAuthToken(token);
+				dispatch(setCurrentUser(token));
 			})
-			.then((res) => {
+			.then(() => {
 				history.push('/')
 			})
 			.catch(err => {

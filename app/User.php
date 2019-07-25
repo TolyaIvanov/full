@@ -10,16 +10,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, SoftDeletes;
+    use Notifiable, HasApiTokens;
 
-    protected $dates = ['deleted_at'];
+//    protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'username', 'email', 'password'
+        'username', 'email', 'password', 'role'
     ];
 
     protected $hidden = [
-        'password', 'remember_token'
+        'password', 'remember_token', 'role'
     ];
 
     protected $casts = [

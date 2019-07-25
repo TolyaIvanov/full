@@ -10,7 +10,8 @@ function LoginLogo({className, fill}) {
 			     xmlnsXlink="http://www.w3.org/1999/xlink"
 			     x="0px" y="0px"
 			     viewBox="0 0 258.75 258.75"
-			     xmlSpace="preserve">
+			     xmlSpace="preserve"
+			>
 				<g>
 					<circle fill={fill} cx="129.375" cy="60" r="60"/>
 					<path fill={fill}
