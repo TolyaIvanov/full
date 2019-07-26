@@ -2,7 +2,6 @@ import axios from 'axios';
 import store from './../../store/store';
 import history from './../../history/history';
 import setAuthToken from './../../setAuthToken';
-import Index from './../../Index'
 
 import {
 	getErrors,
@@ -18,11 +17,12 @@ export const registerUser = (event) => {
 
 		axios.post('/api/signup', user)
 			.then(res => {
-				const {token} = res.data;
+				const {token, username} = res.data;
 
 				localStorage.setItem('token', token);
+				localStorage.setItem('username', username);
 				setAuthToken(token);
-				dispatch(setCurrentUser(token));
+				dispatch(setCurrentUser({username, token}));
 			})
 			.then(() => history.push('/'))
 			.catch(err => {
@@ -42,11 +42,12 @@ export const loginUser = (event) => {
 
 		axios.post('/api/login', user)
 			.then(res => {
-				const {token} = res.data;
+				const {token, username} = res.data;
 
 				localStorage.setItem('token', token);
+				localStorage.setItem('username', username);
 				setAuthToken(token);
-				dispatch(setCurrentUser(token));
+				dispatch(setCurrentUser({username, token}));
 			})
 			.then(() => {
 				history.push('/')
@@ -58,10 +59,14 @@ export const loginUser = (event) => {
 };
 
 export const logoutUser = () => dispatch => {
-	localStorage.removeItem('token');
-	setAuthToken(false);
-	dispatch(setCurrentUser({}));
-	dispatch(clearInputs());
-
-	history.push('/');
+	axios.get(`api/logout`)
+		.then(res => {
+			console.log(res);
+			localStorage.removeItem('token');
+			localStorage.removeItem('username');
+			setAuthToken(false);
+			dispatch(setCurrentUser({}));
+			dispatch(clearInputs());
+		})
+		.then(history.push('/'));
 };

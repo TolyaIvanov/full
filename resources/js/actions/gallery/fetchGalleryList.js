@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 import {fetchGalleryListHasErrored, galleryIsLoading, fetchGalleryListSuccess} from './actionCreators'
 
 export const errorFetch = () => {
@@ -12,7 +14,7 @@ export const fetchGalleryList = (url) => {
 	return (dispatch) => {
 		dispatch(galleryIsLoading(true));
 
-		fetch(url)
+		axios.get(url)
 			.then((response) => {
 				if (!response.ok) {
 					throw Error(response.statusText);

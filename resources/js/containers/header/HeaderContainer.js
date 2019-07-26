@@ -38,7 +38,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
 	toggleMenu: () => dispatch(toggleMenu()),
 	toggleDropdown: (event) => {
-		console.log(event);
 		event.stopPropagation();
 		dispatch(toggleDropdown())
 	},

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-class CabinetContainer extends Component {
+class ProfileContainer extends Component {
 	render() {
 		return (
 			<div>
@@ -15,4 +15,4 @@ const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(CabinetContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);

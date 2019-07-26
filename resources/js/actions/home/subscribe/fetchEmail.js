@@ -6,6 +6,7 @@ import {
 	addNotification
 } from "../../notifications/notifications";
 
+import axios from 'axios';
 import store from '../../../store/store';
 
 export const fetchEmail = (url) => {
@@ -14,15 +15,7 @@ export const fetchEmail = (url) => {
 	return dispatch => {
 		let email = store.getState().emailChanging.value;
 
-		fetch(url, {
-			method: 'POST',
-			body: JSON.stringify({
-				'email': email,
-			}),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		})
+		axios.post(url, email)
 			.then((response) => {
 				if (!response.ok) {
 					throw Error(response.statusText);

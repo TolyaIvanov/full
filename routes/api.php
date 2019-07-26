@@ -14,8 +14,8 @@ Route::post('signup', 'api\AuthController@register');
 Route::get('signup/activate/{token}', 'AuthController@signupActivate');
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('getUser', 'api\AuthController@getUser');
-    Route::get('logout', 'Api\AuthController@logout');
+    Route::get('user', 'api\AuthController@getUser');
+    Route::get('logout', 'api\AuthController@logout');
 });
 
 Route::post('send/mail', 'api\MailsController@send');  //todo send email

@@ -11,9 +11,9 @@ export const getErrors = data => ({
 	data
 });
 
-export const setCurrentUser = decoded => ({
+export const setCurrentUser = payload => ({
 	type: SET_CURRENT_USER,
-	payload: decoded
+	payload: payload
 });
 
 export const registerInputsValue = (key, value) => {

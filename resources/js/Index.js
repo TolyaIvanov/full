@@ -15,11 +15,15 @@ import Footer from './components/footer/Footer'
 import NotificationContainer from './containers/notifications/NotificationContainer'
 
 const token = localStorage.getItem('token');
+const username = localStorage.getItem('username');
 
-if (token) {
+if (token && username) {
 	console.log(token);
 	setAuthToken(token);
-	store.dispatch(setCurrentUser(token));
+	store.dispatch(setCurrentUser({username, token}));
+} else {
+	localStorage.removeItem('token');
+	localStorage.removeItem('username');
 }
 
 class Index extends Component {

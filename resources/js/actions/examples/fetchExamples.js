@@ -1,8 +1,10 @@
+import axios from 'axios';
+
 import {fetchExample} from "./actionCreators";
 
 export const fetchExamplesList = url => {
 	return (dispatch) => {
-		fetch(url)
+		axios.get(url)
 			.then((response) => {
 				if (!response.ok) {
 					throw Error(response.statusText);

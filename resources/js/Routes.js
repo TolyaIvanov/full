@@ -9,7 +9,7 @@ const Gallery = lazy(() => import('./components/gallery/Gallery'));
 const Try = lazy(() => import('./components/try/Try'));
 const LoginContainer = lazy(() => import('./containers/auth/login/LoginContainer'));
 const RegistrationContainer = lazy(() => import('./containers/auth/registration/RegistrationContainer'));
-const CabinetContainer = lazy(() => import('./containers/cabinet/CabinetContainer'));
+const CabinetContainer = lazy(() => import('./containers/profile/ProfileContainer'));
 const AdminPanelContainer = lazy(() => import('./containers/admin/AdminPanelContainer'))
 
 
@@ -24,7 +24,7 @@ class Routes extends Component {
 				{                                                           //todo make custom route component
 					this.props.auth.isAuthenticated ?
 						<Fragment>
-							<Route path={'/cabinet'} component={CabinetContainer}/>
+							<Route path={'/profile'} component={CabinetContainer}/>
 						</Fragment>
 						:
 						<Fragment>
