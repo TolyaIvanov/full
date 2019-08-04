@@ -9,6 +9,7 @@
 @import "footer";
 @import "auth/auth";
 @import "images";
+@import "profile/profile";
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
@@ -40,4 +41,8 @@ a {
 
 p {
 	margin: 0;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
 }

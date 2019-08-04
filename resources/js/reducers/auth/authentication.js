@@ -9,7 +9,7 @@ import isEmpty from './../../validation/isEmpty';
 
 const initialAuthState = {
 	isAuthenticated: false,
-	token: {}
+	payload: {}
 };
 
 const initialValuesState = {
@@ -25,7 +25,7 @@ export const auth = (state = initialAuthState, {type, payload}) => {
 			return {
 				...state,
 				isAuthenticated: !isEmpty(payload),
-				token: payload
+				payload
 			};
 		default:
 			return state;

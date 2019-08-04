@@ -40,10 +40,12 @@ const Header = memo((props) => (
 							</div>
 							<Dropdown
 								logout={props.logout}
+								username={props.username}
 							/>
-						</li> :
+						</li>
+						:
 						<li className={'navbar-item'}>
-							<Link to={props.isAuthenticated ? '/cabinet' : '/login'}>
+							<Link to={props.isAuthenticated ? '/profile' : '/login'}>
 								<LoginLogo
 									className={'login-logo'}
 									fill={'#fff'}

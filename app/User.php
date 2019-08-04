@@ -15,7 +15,7 @@ class User extends Authenticatable
 //    protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'username', 'email', 'password', 'role'
+        'username', 'email', 'password', 'avatar', 'status'
     ];
 
     protected $hidden = [
@@ -25,4 +25,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 }

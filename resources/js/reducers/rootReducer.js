@@ -35,6 +35,10 @@ import {
 	menu
 } from "./header/menu";
 
+import {
+    profileData
+} from "./profile/profileData";
+
 export default combineReducers({
 	fetchGalleryList,
 	galleryIsLoading,
@@ -47,4 +51,5 @@ export default combineReducers({
 	authErrors,
 	inputsValues,
 	menu,
+    profileData,
 });

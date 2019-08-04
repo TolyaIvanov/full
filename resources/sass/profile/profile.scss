@@ -1,0 +1,80 @@
+.profile {
+    padding: 90px 5% 0 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .info {
+        display: flex;
+
+        .avatar-wrapper {
+            min-width: 158px;
+            min-height: 158px;
+            padding: 12px;
+            border-radius: 50%;
+            background-color: #fff1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .avatar-default {
+                width: 128px;
+                height: 128px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .info-text {
+            width: 100%;
+            max-width: 700px;
+            margin: 15px 0 0 25px;
+            font-family: 'Nunito', sans-serif;
+
+            .username {
+                padding-bottom: 25px;
+                font-size: 30px;
+                cursor: default;
+            }
+
+            .status-wrapper {
+                display: flex;
+
+                .set-status {
+                    min-width: 32px;
+                    height: 32px;
+                    margin-left: 4px;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    padding: 0;
+                    border: none;
+                    background-color: #80ff5c;
+                    cursor: pointer;
+                    display: none;
+                    justify-content: center;
+                    color: #fff;
+                    transition: color .3s;
+
+                    &:hover {
+                        color: #313030;
+                    }
+
+                    &.active {
+                        display: flex;
+                    }
+                }
+            }
+
+            .status {
+                font-weight: 200;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #333;
+                font-size: 16px;
+                color: #9f9f9f;
+                padding-bottom: 10px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

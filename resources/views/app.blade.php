@@ -6,7 +6,6 @@
     <meta id="vp" name="viewport" content="width=device-width">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>egor shop</title>
     <link rel="manifest" href={{ asset('./mix-manifest.json') }}>
     <script>
 	    window.onload = function() {

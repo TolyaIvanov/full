@@ -1,12 +1,13 @@
-import React, {Component, Suspense} from 'react'
+import React, {Component, Suspense, Fragment} from 'react'
 import ReactDOM from 'react-dom'
 import {Router} from "react-router-dom"
 import {Provider} from 'react-redux'
 import history from './history/history'
 import store from './store/store'
+import Helmet from 'react-helmet'
 import setAuthToken from './setAuthToken'
 import {
-	setCurrentUser
+    setCurrentUser
 } from "./actions/auth/actionCreator";
 
 import Routes from './Routes'
@@ -18,31 +19,38 @@ const token = localStorage.getItem('token');
 const username = localStorage.getItem('username');
 
 if (token && username) {
-	console.log(token);
-	setAuthToken(token);
-	store.dispatch(setCurrentUser({username, token}));
+    setAuthToken(token);
+    store.dispatch(setCurrentUser({username, token}));
 } else {
-	localStorage.removeItem('token');
-	localStorage.removeItem('username');
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
 }
 
 class Index extends Component {
-	render() {
-		return (
-			<Provider store={store}>
-				<Router history={history}>
-					<HeaderContainer/>
-					<Suspense fallback={null}>
-						<Routes/>
-					</Suspense>
-					<Footer/>
-					<NotificationContainer/>
-				</Router>
-			</Provider>
-		);
-	}
+    render() {
+        return (
+            <Fragment>
+                <Helmet
+                    title="best name"
+                    meta={[
+                        {"name": "description", "content": "Helmet application"}
+                    ]}
+                />
+                <Provider store={store}>
+                    <Router history={history}>
+                        <HeaderContainer/>
+                        <Suspense fallback={null}>
+                            <Routes/>
+                        </Suspense>
+                        <Footer/>
+                        <NotificationContainer/>
+                    </Router>
+                </Provider>
+            </Fragment>
+        );
+    }
 }
 
 if (document.getElementById('root')) {
-	ReactDOM.render(<Index/>, document.getElementById('root'));
+    ReactDOM.render(<Index/>, document.getElementById('root'));
 }

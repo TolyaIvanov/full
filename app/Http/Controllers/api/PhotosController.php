@@ -12,11 +12,11 @@ class PhotosController extends Controller
     public function index(Request $request)
     {
         $part = $request->load_param;
-        $chunk = $request->chunk;
+
         $images = new PhotosResource(
             Photos::orderBy('id', 'desc')
-                ->skip($part * $chunk)
-                ->take($chunk)
+                ->skip($part * 12)
+                ->take(12)
                 ->get()
         );
 

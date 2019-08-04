@@ -24,6 +24,7 @@ class HeaderContainer extends Component {
 				toggleDropdown={this.props.toggleDropdown}
 				isAuthenticated={isAuthenticated}
 				logout={this.props.logout}
+				username={this.props.auth.payload.username}
 			>
 			</Header>
 		);

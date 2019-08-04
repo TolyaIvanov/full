@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch) => ({
 	fetchData: (url) => dispatch(fetchGalleryList(url))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(GalleryListContainer));
+export default  connect(mapStateToProps, mapDispatchToProps)(withRouter(GalleryListContainer));

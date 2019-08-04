@@ -38,3 +38,9 @@ export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const REGISTER_INPUTS = 'REGISTER_INPUTS';
 export const LOGIN_INPUTS = 'LOGIN_INPUTS';
 export const CLEAR_INPUTS = 'CLEAR_INPUTS';
+
+//profile
+export const GET_PROFILE = 'GET_PROFILE';
+export const GET_PROFILE_PHOTOS = 'GET_PROFILE_PHOTOS';
+export const CHANGE_USER_STATUS = 'CHANGE_USER_STATUS';
+

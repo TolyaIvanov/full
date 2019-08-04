@@ -61,7 +61,6 @@ export const loginUser = (event) => {
 export const logoutUser = () => dispatch => {
 	axios.get(`api/logout`)
 		.then(res => {
-			console.log(res);
 			localStorage.removeItem('token');
 			localStorage.removeItem('username');
 			setAuthToken(false);
