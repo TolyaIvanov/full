@@ -4,15 +4,12 @@ namespace App;
 
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Photos;
 
 class User extends Authenticatable
 {
     use Notifiable, HasApiTokens;
-
-//    protected $dates = ['deleted_at'];
 
     protected $fillable = [
         'username', 'email', 'password', 'avatar', 'status'
@@ -26,5 +23,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function user_created_photo()
+    {
+        return $this->hasMany(Photos::class, 'user_created_photo_id');
+    }
 
+    public function user_liked_photo()
+    {
+        return $this->hasMany(Photos::class, 'user_liked_photo_id');
+    }
 }

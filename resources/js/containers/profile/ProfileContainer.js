@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import Profile from "../../components/profile/Profile";
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import Profile from "../../components/profile/Profile"
+import Error from "../../Error";
 
 import {
     getUserData,
@@ -17,8 +18,8 @@ import {
 
 class ProfileContainer extends Component {
     componentDidMount() {
-        this.props.getUserData();
-        this.props.getUserPhotos();
+        this.props.getUserData(this.props.match.params.username);
+        this.props.getUserPhotos(this.props.match.params.username);
     }
 
     render() {
@@ -28,7 +29,7 @@ class ProfileContainer extends Component {
                     className={'status'}
                     type="text"
                     placeholder={'status'}
-                    value={this.props.profile.status}
+                    value={this.props.profile.user.status}
                     onChange={
                         event => {
                             this.props.changeStatusInput(event.target.value, true)
@@ -37,7 +38,7 @@ class ProfileContainer extends Component {
                 />
                 <div
                     onClick={
-                        () => this.props.changeStatusRequest(this.props.profile.status)
+                        () => this.props.changeStatusRequest(this.props.profile.user.status)
                     }
                     className={this.props.profile.isStatusChanged ? 'set-status active' : 'set-status'}
                 >
@@ -49,17 +50,24 @@ class ProfileContainer extends Component {
                 {this.props.profile.status}
             </p>;
 
-        return (
-            <Profile
-                username={this.props.match.params.username}
-                avatar={this.props.profile.avatar}
-                avatarPreview={this.props.profile.avatarPreview}
-                photos={this.props.profile.photos}
-                liked={this.props.profile.liked}
-            >
-                {status}
-            </Profile>
-        );
+        return !this.props.profile.isLoading ?
+            this.props.profile.isExist ? (
+                <Profile
+                    username={this.props.match.params.username}
+                    avatar={this.props.profile.user.avatar}
+                    photos={this.props.profile.user_created_photos}
+                    liked={this.props.profile.user_liked_photos}
+                >
+                    {status}
+                </Profile>
+            ) : (
+                <Error/>
+            ) : (
+                <div className="profile-loading">
+                    <div className="cube1"></div>
+                    <div className="cube2"></div>
+                </div>
+            )
     }
 }
 
@@ -69,8 +77,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getUserData: () => dispatch(getUserData()),
-    getUserPhotos: () => dispatch(getUserPhotos()),
+    getUserData: (username) => dispatch(getUserData(username)),
+    getUserPhotos: (username) => dispatch(getUserPhotos(username)),
     changeStatusRequest: (status) => dispatch(setUserStatus(status)),
     changeStatusInput: (status, isStatusChanged) => dispatch(userStatus(status, isStatusChanged)),
 });

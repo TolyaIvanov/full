@@ -9,7 +9,7 @@ import {addNotification} from "../notifications/notifications";
 export const setUserStatus = (status) => dispatch => {
     axios.post(`${BASE_PATH}user/sittings/status`, {status: status})
         .then(res => {
-            // dispatch(userStatus(res.data, false));
+            dispatch(userStatus(res.data.status, false));
             // dispatch(addNotification('Status saved.'));
         })
         .catch(err => {

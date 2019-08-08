@@ -4,13 +4,19 @@ import {
     Redirect
 } from 'react-router-dom'
 
-const token = localStorage.getItem('token');
-const username = localStorage.getItem('username');
+export const PrivateRoute = ({component: Component, redirect, ...rest}) => {
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
 
-const PrivateRoute = ({component: Component, ...rest}) => (
-    <Route {...rest} render={(props) => (
-        ((token) && (username))
-            ? <Component {...props} />
-            : <Redirect to='/login'/>
-    )}/>
-);
+    return (
+        <Route
+            {...rest}
+            render={(props) => (
+                ((token) && (username))
+                    ? <Component {...props} />
+                    : <Redirect to={redirect}/>
+            )}
+        />
+    )
+};
+

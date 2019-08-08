@@ -11,6 +11,28 @@ module.exports = "/images/about.png?cdd73f24ff6217a80e9a179a3e28ddf6";
 
 /***/ }),
 
+/***/ "./resources/images/large/deepDream1.jpg":
+/*!***********************************************!*\
+  !*** ./resources/images/large/deepDream1.jpg ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/deepDream1.jpg?fc8d2e1d25d7d2694468ae0a5c0511ae";
+
+/***/ }),
+
+/***/ "./resources/images/large/generate1.jpg":
+/*!**********************************************!*\
+  !*** ./resources/images/large/generate1.jpg ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/generate1.jpg?54ae70a3a4e275358eadb5062e7b4e67";
+
+/***/ }),
+
 /***/ "./resources/images/large/phone.png":
 /*!******************************************!*\
   !*** ./resources/images/large/phone.png ***!
@@ -33,6 +55,17 @@ module.exports = "/images/picture.png?ea108209cde85c3eba99175e495485a5";
 
 /***/ }),
 
+/***/ "./resources/images/large/styleTransfer1.jpg":
+/*!***************************************************!*\
+  !*** ./resources/images/large/styleTransfer1.jpg ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/styleTransfer1.jpg?0c43e7df13bc50e8cbdbbda2a9388470";
+
+/***/ }),
+
 /***/ "./resources/images/small/aboutSmall.png":
 /*!***********************************************!*\
   !*** ./resources/images/small/aboutSmall.png ***!
@@ -41,6 +74,28 @@ module.exports = "/images/picture.png?ea108209cde85c3eba99175e495485a5";
 /***/ (function(module, exports) {
 
 module.exports = "/images/aboutSmall.png?83777acceccb2a6f53b30dca40bfcc8e";
+
+/***/ }),
+
+/***/ "./resources/images/small/deepDream1Small.jpg":
+/*!****************************************************!*\
+  !*** ./resources/images/small/deepDream1Small.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/deepDream1Small.jpg?c045205de4d630e1a6dfc724038f2077";
+
+/***/ }),
+
+/***/ "./resources/images/small/generate1Small.jpg":
+/*!***************************************************!*\
+  !*** ./resources/images/small/generate1Small.jpg ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/generate1Small.jpg?f00fb5bbe3d3e7222073fc3f8f0dc37b";
 
 /***/ }),
 
@@ -66,57 +121,14 @@ module.exports = "/images/pictureSmall.png?b0a8215bb06d12bad2cb0de2877a9463";
 
 /***/ }),
 
-/***/ "./resources/js/actions/examples/actionCreators.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/actions/examples/actionCreators.js ***!
-  \*********************************************************/
-/*! exports provided: fetchExample */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchExample", function() { return fetchExample; });
-/* harmony import */ var _constants_defaultConstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/defaultConstants */ "./resources/js/constants/defaultConstants.js");
-
-var fetchExample = function fetchExample(data) {
-  return {
-    type: _constants_defaultConstants__WEBPACK_IMPORTED_MODULE_0__["LOAD_EXAMPLES_PHOTOS"],
-    data: data
-  };
-};
-
-/***/ }),
-
-/***/ "./resources/js/actions/examples/fetchExamples.js":
+/***/ "./resources/images/small/styleTransfer1Small.jpg":
 /*!********************************************************!*\
-  !*** ./resources/js/actions/examples/fetchExamples.js ***!
+  !*** ./resources/images/small/styleTransfer1Small.jpg ***!
   \********************************************************/
-/*! exports provided: fetchExamplesList */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchExamplesList", function() { return fetchExamplesList; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actionCreators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actionCreators */ "./resources/js/actions/examples/actionCreators.js");
-
-
-var fetchExamplesList = function fetchExamplesList(url) {
-  return function (dispatch) {
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
-
-      return response;
-    }).then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      return dispatch(Object(_actionCreators__WEBPACK_IMPORTED_MODULE_1__["fetchExample"])(data));
-    });
-  };
-};
+module.exports = "/images/styleTransfer1Small.jpg?b6b6b31d84f438f47d0fea43bbb1bdac";
 
 /***/ }),
 
@@ -599,6 +611,8 @@ var Subscribe = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (pro
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ProgressiveImage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../ProgressiveImage */ "./resources/js/components/ProgressiveImage.js");
+
 
 var ExampleColumn = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -607,13 +621,9 @@ var ExampleColumn = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function 
     className: 'image-styles'
   }, props.style), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "style-image-wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.firstUri,
-    alt: "image"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "style-image-wrapper"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: props.secondUri,
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProgressiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    image: props.image,
+    preview: props.preview,
     alt: "image"
   })));
 });
@@ -632,7 +642,25 @@ var ExampleColumn = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _containers_examples_ExampleColumnContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../containers/examples/ExampleColumnContainer */ "./resources/js/containers/examples/ExampleColumnContainer.js");
+/* harmony import */ var _ExampleColumn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleColumn */ "./resources/js/components/home/parts/examples/ExampleColumn.js");
+/* harmony import */ var _images_large_deepDream1_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../../../images/large/deepDream1.jpg */ "./resources/images/large/deepDream1.jpg");
+/* harmony import */ var _images_large_deepDream1_jpg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_large_deepDream1_jpg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_large_generate1_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../../../images/large/generate1.jpg */ "./resources/images/large/generate1.jpg");
+/* harmony import */ var _images_large_generate1_jpg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_large_generate1_jpg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _images_large_styleTransfer1_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../../../../images/large/styleTransfer1.jpg */ "./resources/images/large/styleTransfer1.jpg");
+/* harmony import */ var _images_large_styleTransfer1_jpg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_large_styleTransfer1_jpg__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _images_small_deepDream1Small_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../../../../images/small/deepDream1Small.jpg */ "./resources/images/small/deepDream1Small.jpg");
+/* harmony import */ var _images_small_deepDream1Small_jpg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_small_deepDream1Small_jpg__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _images_small_generate1Small_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../../../../images/small/generate1Small.jpg */ "./resources/images/small/generate1Small.jpg");
+/* harmony import */ var _images_small_generate1Small_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_images_small_generate1Small_jpg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _images_small_styleTransfer1Small_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../../../../images/small/styleTransfer1Small.jpg */ "./resources/images/small/styleTransfer1Small.jpg");
+/* harmony import */ var _images_small_styleTransfer1Small_jpg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_images_small_styleTransfer1Small_jpg__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
+
+
 
 
 var Examples = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (props) {
@@ -646,123 +674,21 @@ var Examples = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (prop
     className: 'examples-description'
   }, "Choose one of the several types of NeuroArt.AI. We have 3 types like Make Art, Style Transfer and Deep Dream. Let\u2019s see some examples.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "styles"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_examples_ExampleColumnContainer__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ExampleColumn__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    style: 'Make art',
+    image: _images_large_generate1_jpg__WEBPACK_IMPORTED_MODULE_3___default.a,
+    preview: _images_small_generate1Small_jpg__WEBPACK_IMPORTED_MODULE_6___default.a
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ExampleColumn__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    style: 'Style transfer',
+    image: _images_large_styleTransfer1_jpg__WEBPACK_IMPORTED_MODULE_4___default.a,
+    preview: _images_small_styleTransfer1Small_jpg__WEBPACK_IMPORTED_MODULE_7___default.a
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ExampleColumn__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    style: 'Deep dream',
+    image: _images_large_deepDream1_jpg__WEBPACK_IMPORTED_MODULE_2___default.a,
+    preview: _images_small_deepDream1Small_jpg__WEBPACK_IMPORTED_MODULE_5___default.a
+  })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (Examples);
-
-/***/ }),
-
-/***/ "./resources/js/containers/examples/ExampleColumnContainer.js":
-/*!********************************************************************!*\
-  !*** ./resources/js/containers/examples/ExampleColumnContainer.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_examples_fetchExamples__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/examples/fetchExamples */ "./resources/js/actions/examples/fetchExamples.js");
-/* harmony import */ var _constants_defaultConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants/defaultConstants */ "./resources/js/constants/defaultConstants.js");
-/* harmony import */ var _components_home_parts_examples_ExampleColumn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/home/parts/examples/ExampleColumn */ "./resources/js/components/home/parts/examples/ExampleColumn.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-var ExampleColumnContainer =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(ExampleColumnContainer, _React$Component);
-
-  function ExampleColumnContainer() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _classCallCheck(this, ExampleColumnContainer);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ExampleColumnContainer)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "renderStyleCols", function (data) {
-      var columns = [];
-      columns = data[0] && data[0].length > 0 ? [].concat([data[0].filter(function (col) {
-        return col.style === 'Make art';
-      })], [data[0].filter(function (col) {
-        return col.style === 'Style transfer';
-      })], [data[0].filter(function (col) {
-        return col.style === 'Deep dream';
-      })]) : [];
-      return columns.map(function (col) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_home_parts_examples_ExampleColumn__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          key: col[0].id,
-          style: col[0].style,
-          firstUri: col[0].uri,
-          secondUri: col[1].uri
-        });
-      });
-    });
-
-    return _this;
-  }
-
-  _createClass(ExampleColumnContainer, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchData("".concat(_constants_defaultConstants__WEBPACK_IMPORTED_MODULE_3__["BASE_PATH"], "examples"));
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, this.renderStyleCols(this.props.examplesData));
-    }
-  }]);
-
-  return ExampleColumnContainer;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    examplesData: state.fetchExamples
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    fetchData: function fetchData(url) {
-      return dispatch(Object(_actions_examples_fetchExamples__WEBPACK_IMPORTED_MODULE_2__["fetchExamplesList"])(url));
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(ExampleColumnContainer));
 
 /***/ }),
 

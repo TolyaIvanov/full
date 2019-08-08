@@ -4,17 +4,25 @@ namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 use Validator;
-use Auth;
 
 class UserController extends Controller
 {
-    public function user(Request $request)
+    public function user(Request $request, $username)
     {
-        $user = Auth::user();
+        $user = User::where('username', $username)->first();
 
-        dd(response()->json(['user' => $user->only(['username', 'avatar', 'status'])], 200));
-        response($request->user(), 200);
+        if ($user) {
+            return response(
+                [
+                    'user' => $user->only(['avatar', 'status', 'username']),
+                    'user_created_photos' => $user->user_created_photo(),
+                    'user_liked_photos' => $user->user_liked_photo(),
+                ], 200);
+        } else {
+            return response('user does not exist', 422);
+        }
     }
 
     public function avatar(Request $request)
@@ -24,11 +32,8 @@ class UserController extends Controller
         ]);
 
         $user = $request->user();
-
         $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
-
         $request->avatar->storeAs('avatars', $avatarName);
-
         $user->avatar = $avatarName;
         $user->save();
 
@@ -45,7 +50,6 @@ class UserController extends Controller
         $validated_data = Validator::make($request->all(), [
             'status' => 'required|string|max:50'
         ]);
-
 
         if ($validated_data->fails()) {
             $errors = $validated_data->errors()->toJson();

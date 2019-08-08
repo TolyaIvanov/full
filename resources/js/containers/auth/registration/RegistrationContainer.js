@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom'
+import {withRouter, Redirect} from 'react-router-dom'
 
 import Registration from './../../../components/auth/registration/Registration';
 
@@ -15,6 +15,10 @@ import {
 
 class RegistrationContainer extends Component {
 	render() {
+        if (this.props.auth.isAuthenticated) {
+            return <Redirect to="/" />
+        }
+
 		return (
 			<Registration
 				onInput={this.props.change}

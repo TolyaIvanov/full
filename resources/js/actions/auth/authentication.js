@@ -4,68 +4,74 @@ import history from './../../history/history';
 import setAuthToken from './../../setAuthToken';
 
 import {
-	getErrors,
-	setCurrentUser,
-	clearInputs,
+    getErrors,
+    setCurrentUser,
+    clearInputs,
 } from './actionCreator';
 
 export const registerUser = (event) => {
-	event.preventDefault();
+    event.preventDefault();
 
-	return dispatch => {
-		let user = store.getState().inputsValues;
+    return dispatch => {
+        let user = store.getState().inputsValues;
 
-		axios.post('/api/signup', user)
-			.then(res => {
-				const {token, username} = res.data;
+        axios.post('/api/signup', user)
+            .then(res => {
+                const {token, username} = res.data;
 
-				localStorage.setItem('token', token);
-				localStorage.setItem('username', username);
-				setAuthToken(token);
-				dispatch(setCurrentUser({username, token}));
-			})
-			.then(() => history.push('/'))
-			.catch(err => {
-				dispatch(getErrors(err.response));
-			});
-	}
+                localStorage.setItem('token', token);
+                localStorage.setItem('username', username);
+                setAuthToken(token);
+                dispatch(setCurrentUser({username, token}));
+
+                return username;
+            })
+            .then((username) => {
+                history.push(`/profile/${username}`)
+            })
+            .catch(err => {
+                dispatch(getErrors(err.response));
+            });
+    }
 };
 
 export const loginUser = (event) => {
-	event.preventDefault();
+    event.preventDefault();
 
-	return dispatch => {
-		let user = {
-			email: store.getState().inputsValues.login_email,
-			password: store.getState().inputsValues.login_password
-		};
+    return dispatch => {
+        let user = {
+            email: store.getState().inputsValues.login_email,
+            password: store.getState().inputsValues.login_password
+        };
 
-		axios.post('/api/login', user)
-			.then(res => {
-				const {token, username} = res.data;
+        axios.post('/api/login', user)
+            .then(res => {
+                const {token, username} = res.data;
 
-				localStorage.setItem('token', token);
-				localStorage.setItem('username', username);
-				setAuthToken(token);
-				dispatch(setCurrentUser({username, token}));
-			})
-			.then(() => {
-				history.push('/')
-			})
-			.catch(err => {
-				dispatch(getErrors(err.response));
-			});
-	};
+                localStorage.setItem('token', token);
+                localStorage.setItem('username', username);
+                setAuthToken(token);
+                dispatch(setCurrentUser({username, token}));
+
+                return username;
+            })
+            .then((username) => {
+                history.push(`/profile/${username}`)
+            })
+            .catch(err => {
+                dispatch(getErrors(err.response));
+            });
+    };
 };
 
 export const logoutUser = () => dispatch => {
-	axios.get(`api/logout`)
-		.then(res => {
-			localStorage.removeItem('token');
-			localStorage.removeItem('username');
-			setAuthToken(false);
-			dispatch(setCurrentUser({}));
-			dispatch(clearInputs());
-		})
-		.then(history.push('/'));
+    axios.get(`api/logout`)
+        .then(res => {
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            setAuthToken(false);
+            dispatch(setCurrentUser({}));
+            dispatch(clearInputs());
+        })
+        .then(history.push('/'));
 };

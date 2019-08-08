@@ -3,28 +3,42 @@ import {
     addNotification
 } from "../notifications/notifications";
 
-
 import {
     BASE_PATH
 } from "../../constants/defaultConstants";
 
 import {
     userData,
-    userPhotos
+    userPhotos,
+    userDataIsLoading
 } from "./actionCreator";
 
-export const getUserData = () => dispatch => {
-    axios.get(`${BASE_PATH}user`)
+export const getUserData = (username) => dispatch => {
+    dispatch(userDataIsLoading(true));
+
+    axios.get(`${BASE_PATH}user/${username}`)
         .then(res => {
-            dispatch(userData);
+            let data = {
+                ...res.data,
+                isExist: true
+            };
+
+            dispatch(userData(data));
+            dispatch(userDataIsLoading(false));
         })
         .catch(err => {
-            dispatch(addNotification(err))
+            let data = {
+                isExist: false
+            };
+
+            dispatch(userData(data));
+            dispatch(addNotification(err));
+            dispatch(userDataIsLoading(false));
         })
 };
 
-export const getUserPhotos = () => dispatch => {
-    axios.get(`${BASE_PATH}user/pictures`)
+export const getUserPhotos = (username) => dispatch => {
+    axios.get(`${BASE_PATH}user/${username}/pictures`)
         .then(res => {
             dispatch(userPhotos(res.data))
         })

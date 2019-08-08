@@ -7,10 +7,6 @@ import {
 } from './gallery/galleryList'
 
 import {
-	fetchExamples
-} from "./examples/examples";
-
-import {
 	emailChanging,
 } from "./home/subscribe/email";
 
@@ -43,7 +39,6 @@ export default combineReducers({
 	fetchGalleryList,
 	galleryIsLoading,
 	fetchGalleryListHasErrored,
-	fetchExamples,
 	emailChanging,
 	notifications,
 	missionInputs,

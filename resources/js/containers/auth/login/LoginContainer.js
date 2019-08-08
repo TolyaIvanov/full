@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom'
+import {withRouter, Redirect} from 'react-router-dom'
 
 import Login from './../../../components/auth/login/Login';
 
@@ -15,6 +15,10 @@ import {
 
 class LoginContainer extends Component {
 	render() {
+	    if (this.props.auth.isAuthenticated) {
+	        return <Redirect to="/" />
+        }
+
 		return (
 			<Login
 				onInput={this.props.change}

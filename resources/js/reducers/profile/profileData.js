@@ -2,15 +2,20 @@ import {
     CHANGE_USER_STATUS,
     GET_PROFILE,
     GET_PROFILE_PHOTOS,
+    GET_PROFILE_IS_LOADING,
 } from "../../constants/defaultConstants";
 
 const initialState = {
-    avatar: '',
-    avatarPreview: '',
-    status: '',
+    user: {
+        username: '',
+        avatar: '',
+        status: '',
+    },
+    user_created_photos: [],
+    user_liked_photos: [],
+    isExist: false,
+    isLoading: false,
     isStatusChanged: false,
-    photos: [],
-    liked: [],
 };
 
 export const profileData = (state = initialState, {
@@ -18,13 +23,19 @@ export const profileData = (state = initialState, {
     payload,
     photos,
     status,
-    isStatusChanged
+    isStatusChanged,
+    isLoading
 }) => {
     switch (type) {
         case GET_PROFILE:
             return {
                 ...state,
                 ...payload
+            };
+        case GET_PROFILE_IS_LOADING:
+            return {
+                ...state,
+                isLoading
             };
         case GET_PROFILE_PHOTOS:
             return {
@@ -35,7 +46,7 @@ export const profileData = (state = initialState, {
             return {
                 ...state,
                 isStatusChanged,
-                status,
+                user: {status},
             };
         default:
             return state
