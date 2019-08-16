@@ -10,7 +10,6 @@
         .avatar-wrapper {
             min-width: 158px;
             min-height: 158px;
-            padding: 12px;
             border-radius: 50%;
             background-color: #fff1f1;
             display: flex;
@@ -76,6 +75,14 @@
                 letter-spacing: 1px;
             }
         }
+    }
+
+    .created-photos {
+
+    }
+
+    .liked-photos {
+
     }
 }
 

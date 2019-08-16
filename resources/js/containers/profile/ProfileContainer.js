@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import Profile from "../../components/profile/Profile"
 import Error from "../../Error";
@@ -49,6 +49,16 @@ class ProfileContainer extends Component {
             <p className="status">
                 {this.props.profile.status}
             </p>;
+        const createdPhotos = this.props.profile.user_created_photos.length > 0 ?
+            this.generatePhotoList(this.props.profile.user_created_photos, 'Created photos')
+            : <div>
+
+            </div>;
+        const likedPhotos = this.props.profile.user_liked_photos.length > 0 ?
+            this.generatePhotoList(this.props.profile.user_liked_photos, 'Liked photos')
+            : <div>
+
+            </div>;
 
         return !this.props.profile.isLoading ?
             this.props.profile.isExist ? (
@@ -59,6 +69,8 @@ class ProfileContainer extends Component {
                     liked={this.props.profile.user_liked_photos}
                 >
                     {status}
+                    {createdPhotos}
+                    {likedPhotos}
                 </Profile>
             ) : (
                 <Error/>
@@ -69,6 +81,23 @@ class ProfileContainer extends Component {
                 </div>
             )
     }
+
+    generatePhotoList = (photos, title) => {
+        let part = photos.map(photo => (
+            <li className={'photo'}>
+
+            </li>
+        ));
+
+        return (
+            <Fragment>
+                <p className={'part-title'}>{title}</p>
+                <ul className={'list'}>
+                    {part}
+                </ul>
+            </Fragment>
+        );
+    };
 }
 
 const mapStateToProps = (state) => ({

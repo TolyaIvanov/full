@@ -15,6 +15,10 @@ import {
 } from "./notifications/notifications";
 
 import {
+    modal
+} from "./modal/modal";
+
+import {
 	missionInputs
 } from "./home/mission/form";
 
@@ -41,6 +45,7 @@ export default combineReducers({
 	fetchGalleryListHasErrored,
 	emailChanging,
 	notifications,
+    modal,
 	missionInputs,
 	auth,
 	authErrors,

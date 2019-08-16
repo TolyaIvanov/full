@@ -34630,7 +34630,7 @@ var Notification = Object(react__WEBPACK_IMPORTED_MODULE_0__["memo"])(function (
 /*!****************************************************!*\
   !*** ./resources/js/constants/defaultConstants.js ***!
   \****************************************************/
-/*! exports provided: BASE_PATH, SEARCH_PATH, SEARCH_PARAM, LOAD_PARAM, GALLERY_CHUNK, LOAD_GALLERY_PHOTO, GALLERY_IS_LOADING, GALLERY_LOAD_HAS_ERROR, LOAD_EXAMPLES_PHOTOS, EMAIL_INPUT_CHANGING, OPEN_HEADER_MENU, OPEN_HEADER_DROPDOWN, MISSION_INPUTS_CHANGING, SEND_MISSION_FORM, MAKE_NOTIFICATIONS, REMOVE_NOTIFICATIONS, GET_ERRORS, SET_CURRENT_USER, REGISTER_INPUTS, LOGIN_INPUTS, CLEAR_INPUTS, GET_PROFILE, GET_PROFILE_IS_LOADING, GET_PROFILE_PHOTOS, CHANGE_USER_STATUS */
+/*! exports provided: BASE_PATH, SEARCH_PATH, SEARCH_PARAM, LOAD_PARAM, GALLERY_CHUNK, LOAD_GALLERY_PHOTO, GALLERY_IS_LOADING, GALLERY_LOAD_HAS_ERROR, LOAD_EXAMPLES_PHOTOS, EMAIL_INPUT_CHANGING, OPEN_HEADER_MENU, OPEN_HEADER_DROPDOWN, MISSION_INPUTS_CHANGING, SEND_MISSION_FORM, MAKE_NOTIFICATIONS, REMOVE_NOTIFICATIONS, SHOW_MODAL_WINDOW, HIDE_MODAL_WINDOW, GET_ERRORS, SET_CURRENT_USER, REGISTER_INPUTS, LOGIN_INPUTS, CLEAR_INPUTS, GET_PROFILE, GET_PROFILE_IS_LOADING, GET_PROFILE_PHOTOS, CHANGE_USER_STATUS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34651,6 +34651,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SEND_MISSION_FORM", function() { return SEND_MISSION_FORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAKE_NOTIFICATIONS", function() { return MAKE_NOTIFICATIONS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_NOTIFICATIONS", function() { return REMOVE_NOTIFICATIONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHOW_MODAL_WINDOW", function() { return SHOW_MODAL_WINDOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HIDE_MODAL_WINDOW", function() { return HIDE_MODAL_WINDOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ERRORS", function() { return GET_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_CURRENT_USER", function() { return SET_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_INPUTS", function() { return REGISTER_INPUTS; });
@@ -34684,7 +34686,10 @@ var MISSION_INPUTS_CHANGING = 'MISSION_INPUTS_CHANGING';
 var SEND_MISSION_FORM = 'SEND_MISSION_FORM'; //notifications
 
 var MAKE_NOTIFICATIONS = 'MAKE_NOTIFICATIONS';
-var REMOVE_NOTIFICATIONS = 'REMOVE_NOTIFICATIONS'; //auth
+var REMOVE_NOTIFICATIONS = 'REMOVE_NOTIFICATIONS'; //modal
+
+var SHOW_MODAL_WINDOW = 'SHOW_MODAL_WINDOW';
+var HIDE_MODAL_WINDOW = 'HIDE_MODAL_WINDOW'; //auth
 
 var GET_ERRORS = 'GET_ERRORS';
 var SET_CURRENT_USER = 'SET_CURRENT_USER';
@@ -35474,6 +35479,51 @@ var emailChanging = function emailChanging() {
 
 /***/ }),
 
+/***/ "./resources/js/reducers/modal/modal.js":
+/*!**********************************************!*\
+  !*** ./resources/js/reducers/modal/modal.js ***!
+  \**********************************************/
+/*! exports provided: modal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modal", function() { return modal; });
+/* harmony import */ var _constants_defaultConstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/defaultConstants */ "./resources/js/constants/defaultConstants.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var initialState = {
+  modalType: null,
+  modalProps: {}
+};
+var modal = function modal() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+
+  var _ref = arguments.length > 1 ? arguments[1] : undefined,
+      type = _ref.type,
+      modalProps = _ref.modalProps,
+      modalType = _ref.modalType;
+
+  switch (type) {
+    case _constants_defaultConstants__WEBPACK_IMPORTED_MODULE_0__["SHOW_MODAL_WINDOW"]:
+      return _objectSpread({}, state, {
+        modalProps: modalProps,
+        modalType: modalType
+      });
+
+    case _constants_defaultConstants__WEBPACK_IMPORTED_MODULE_0__["HIDE_MODAL_WINDOW"]:
+      return initialState;
+
+    default:
+      return state;
+  }
+};
+
+/***/ }),
+
 /***/ "./resources/js/reducers/notifications/notifications.js":
 /*!**************************************************************!*\
   !*** ./resources/js/reducers/notifications/notifications.js ***!
@@ -35597,11 +35647,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gallery_galleryList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gallery/galleryList */ "./resources/js/reducers/gallery/galleryList.js");
 /* harmony import */ var _home_subscribe_email__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home/subscribe/email */ "./resources/js/reducers/home/subscribe/email.js");
 /* harmony import */ var _notifications_notifications__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./notifications/notifications */ "./resources/js/reducers/notifications/notifications.js");
-/* harmony import */ var _home_mission_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/mission/form */ "./resources/js/reducers/home/mission/form.js");
-/* harmony import */ var _auth_authentication__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth/authentication */ "./resources/js/reducers/auth/authentication.js");
-/* harmony import */ var _auth_authErrors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./auth/authErrors */ "./resources/js/reducers/auth/authErrors.js");
-/* harmony import */ var _header_menu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./header/menu */ "./resources/js/reducers/header/menu.js");
-/* harmony import */ var _profile_profileData__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profile/profileData */ "./resources/js/reducers/profile/profileData.js");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modal/modal */ "./resources/js/reducers/modal/modal.js");
+/* harmony import */ var _home_mission_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home/mission/form */ "./resources/js/reducers/home/mission/form.js");
+/* harmony import */ var _auth_authentication__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./auth/authentication */ "./resources/js/reducers/auth/authentication.js");
+/* harmony import */ var _auth_authErrors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./auth/authErrors */ "./resources/js/reducers/auth/authErrors.js");
+/* harmony import */ var _header_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./header/menu */ "./resources/js/reducers/header/menu.js");
+/* harmony import */ var _profile_profileData__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./profile/profileData */ "./resources/js/reducers/profile/profileData.js");
+
 
 
 
@@ -35617,12 +35669,13 @@ __webpack_require__.r(__webpack_exports__);
   fetchGalleryListHasErrored: _gallery_galleryList__WEBPACK_IMPORTED_MODULE_1__["fetchGalleryListHasErrored"],
   emailChanging: _home_subscribe_email__WEBPACK_IMPORTED_MODULE_2__["emailChanging"],
   notifications: _notifications_notifications__WEBPACK_IMPORTED_MODULE_3__["notifications"],
-  missionInputs: _home_mission_form__WEBPACK_IMPORTED_MODULE_4__["missionInputs"],
-  auth: _auth_authentication__WEBPACK_IMPORTED_MODULE_5__["auth"],
-  authErrors: _auth_authErrors__WEBPACK_IMPORTED_MODULE_6__["authErrors"],
-  inputsValues: _auth_authentication__WEBPACK_IMPORTED_MODULE_5__["inputsValues"],
-  menu: _header_menu__WEBPACK_IMPORTED_MODULE_7__["menu"],
-  profileData: _profile_profileData__WEBPACK_IMPORTED_MODULE_8__["profileData"]
+  modal: _modal_modal__WEBPACK_IMPORTED_MODULE_4__["modal"],
+  missionInputs: _home_mission_form__WEBPACK_IMPORTED_MODULE_5__["missionInputs"],
+  auth: _auth_authentication__WEBPACK_IMPORTED_MODULE_6__["auth"],
+  authErrors: _auth_authErrors__WEBPACK_IMPORTED_MODULE_7__["authErrors"],
+  inputsValues: _auth_authentication__WEBPACK_IMPORTED_MODULE_6__["inputsValues"],
+  menu: _header_menu__WEBPACK_IMPORTED_MODULE_8__["menu"],
+  profileData: _profile_profileData__WEBPACK_IMPORTED_MODULE_9__["profileData"]
 }));
 
 /***/ }),

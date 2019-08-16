@@ -280,7 +280,8 @@ var Profile = function Profile(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "info"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "avatar-wrapper"
+    className: "avatar-wrapper" // onClick={}
+
   }, Boolean(props.avatar) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ProgressiveImage__WEBPACK_IMPORTED_MODULE_1__["default"], {
     image: props.avatar,
     preview: props.avatarPreview,
@@ -291,7 +292,11 @@ var Profile = function Profile(props) {
     className: "info-text"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: 'username'
-  }, props.username), props.children)));
+  }, props.username), props.children[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "created-photos"
+  }, props.children[1]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "liked-photos"
+  }, props.children[2]));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Profile);
@@ -325,13 +330,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -347,9 +354,32 @@ function (_Component) {
   _inherits(ProfileContainer, _Component);
 
   function ProfileContainer() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     _classCallCheck(this, ProfileContainer);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ProfileContainer).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ProfileContainer)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "generatePhotoList", function (photos, title) {
+      var part = photos.map(function (photo) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: 'photo'
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: 'part-title'
+      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: 'list'
+      }, part));
+    });
+
+    return _this;
   }
 
   _createClass(ProfileContainer, [{
@@ -361,7 +391,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       var status = this.props.auth.payload.username === this.props.match.params.username ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: 'status-wrapper'
@@ -371,22 +401,24 @@ function (_Component) {
         placeholder: 'status',
         value: this.props.profile.user.status,
         onChange: function onChange(event) {
-          _this.props.changeStatusInput(event.target.value, true);
+          _this2.props.changeStatusInput(event.target.value, true);
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
-          return _this.props.changeStatusRequest(_this.props.profile.user.status);
+          return _this2.props.changeStatusRequest(_this2.props.profile.user.status);
         },
         className: this.props.profile.isStatusChanged ? 'set-status active' : 'set-status'
       }, "\u2713")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "status"
       }, this.props.profile.status);
+      var createdPhotos = this.props.profile.user_created_photos.length > 0 ? this.generatePhotoList(this.props.profile.user_created_photos, 'Created photos') : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      var likedPhotos = this.props.profile.user_liked_photos.length > 0 ? this.generatePhotoList(this.props.profile.user_liked_photos, 'Liked photos') : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       return !this.props.profile.isLoading ? this.props.profile.isExist ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_profile_Profile__WEBPACK_IMPORTED_MODULE_2__["default"], {
         username: this.props.match.params.username,
         avatar: this.props.profile.user.avatar,
         photos: this.props.profile.user_created_photos,
         liked: this.props.profile.user_liked_photos
-      }, status) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Error__WEBPACK_IMPORTED_MODULE_3__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, status, createdPhotos, likedPhotos) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Error__WEBPACK_IMPORTED_MODULE_3__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-loading"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cube1"
